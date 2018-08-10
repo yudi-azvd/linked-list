@@ -1,3 +1,5 @@
+# NOT FINISHED
+
 # calculator
 basic calculator written in C using some Data Structure concepts.
 
