@@ -18,10 +18,12 @@
 #define TAM 1000000
 
 /* ## READ INPUT  ################################################################ */
+/* Reads input directly from commandline */
 void read_cmdline(char expression[]) {
 	fgets(expression, strlen(expression), stdin);
 }
 
+/* Reads input from files passed in argv */
 int read_files(char expression[], char answ[], char* argv[]) {
 	char expr_filename[30];
 	char answ_filename[30];
@@ -40,9 +42,6 @@ int read_files(char expression[], char answ[], char* argv[]) {
 	fgets(expression, TAM, fp_expr);
 	fgets(answ, 	  50, 	  fp_answ);
 
-	// printf("|%s|\n", expression);
-	// printf("|%s|\n", answ);
-
 	fclose(fp_expr);
 	fclose(fp_answ);
 
@@ -50,6 +49,7 @@ int read_files(char expression[], char answ[], char* argv[]) {
 }
 
 /* ## VALIDATION ################################################################ */
+/* Checks if expression[] is valid */
 int valid(char expression[]) {
 	int i;
 
@@ -68,6 +68,7 @@ int valid(char expression[]) {
 }
 
 /* ## EVALUATION ################################################################ */
+/* Converts a infix expression to a postfix. Still not working. */
 t_str_list* to_postfix(t_str_list* expression) {
 	// check br priority
 	// maybe keep just paretheses
@@ -132,6 +133,7 @@ t_str_list* to_postfix(t_str_list* expression) {
 	return postfix_expression;
 }
 
+/* Evaluates the expression */
 double evaluate(char expression[]) {
 	t_str_list* expr = create_str_list();
 	t_str_list* postfix_expression = create_str_list();
@@ -145,7 +147,7 @@ double evaluate(char expression[]) {
 }
 
 /* ## SCORE ##################################################################### */
-/* atoi from lib/utilities */
+/* Updates the score (just a number, nothing fancy) wich is storaged in score.txt */
 void score_update() {
 	int int_score;
 	char str_score[5];
@@ -175,7 +177,8 @@ void score_update() {
 	fclose(fp);
 }
 
-int is_answ_correct(double result, char answ[]) {
+/* Checks if result is correct */
+int is_result_correct(double result, char answ[]) {
 	char res[SIZE];
 
 	itoa(result, res);
@@ -185,6 +188,8 @@ int is_answ_correct(double result, char answ[]) {
 	return 0;
 }
 
+/* Main function: reads expression, checks for the validity of the expression,
+   evaluates the expression (if valid), outputs the result 					   */
 int main(int argc, char* argv[]) {
 	double result;
 	char expression[TAM];
@@ -200,7 +205,7 @@ int main(int argc, char* argv[]) {
 
 	printf("result : %.2lf\n", result);
 
-	if(is_answ_correct(result, answ))
+	if(is_result_correct(result, answ))
 		score_update();
 
 	return 0;
