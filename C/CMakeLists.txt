@@ -7,6 +7,7 @@ project(calculator)
 # Bring the headers, such as Student.h into the project
 include_directories(
 	lib/
+	lib/list
 
 	include/
 
@@ -24,6 +25,12 @@ file(GLOB SOURCES
 	"src/terminal_functions.c"
 )
 
+file(GLOB LIBS
+	"lib/list/*.c"
+	"lib/list/*.h"
+)
+add_library(libs ${LIBS})
+
 file(GLOB TEST_SOURCES_TERMINAL_FUNCTIONS
 	"tests/terminal_functions/*.cpp"
 )
@@ -38,7 +45,7 @@ file(GLOB TEST_SOURCES_RANDOM_TESTS
 # add_library(includes ${INC_SOURCES} ${INC_HEADERS})
 
 add_executable(calculator ${SOURCES} src/calculator.c)
-# target_link_libraries(calculator ${LIBS})
+target_link_libraries(calculator ${LIBS})
 
 add_executable(
 	test_terminal_functions
@@ -51,4 +58,5 @@ foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})
 	get_filename_component(executable ${src_file} NAME_WE)
 	message(STATUS "exec ${executable}")
 	add_executable(${executable} ${src_file} ${SOURCES})
+	target_link_libraries(${executable} ${LIBS})
 endforeach(src_file TEST_SOURCES_RANDOM_TESTS)

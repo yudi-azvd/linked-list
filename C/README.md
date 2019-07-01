@@ -1,10 +1,8 @@
 # Calculadora
 Ainda em desenvolvimento.
 
-<br>
-
 ## O que ela faz?
-Bem, é só uma calculadora
+Bem, é só uma calculadora.
 
 
 
