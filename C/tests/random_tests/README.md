@@ -1,2 +1,2 @@
 # Que título?
-São arquivos de testes aleatórios que podem ser compilados islodamente.
+São arquivos de testes aleatórios que podem ser compilados isoladamente.
