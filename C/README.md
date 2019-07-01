@@ -3,6 +3,9 @@ Ainda em desenvolvimento.
 
 <br>
 
+## O que ela faz?
+Bem, é só uma calculadora
+
 
 
 <!-- how to C libraries

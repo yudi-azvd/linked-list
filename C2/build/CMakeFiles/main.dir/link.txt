@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/main.dir/tests/random_tests/main.c.o CMakeFiles/main.dir/src/terminal_functions.c.o  -o main 
