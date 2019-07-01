@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/ungetc_str.c.dir/tests/random_tests/ungetc_str.c.o CMakeFiles/ungetc_str.c.dir/src/terminal_functions.c.o  -o ungetc_str.c 

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/terminal_functions.h
+string.h
+-
+stdio.h
+-
+
+/home/yudi/Documents/programming/projetos/calculator/C2/src/terminal_functions.c
+terminal_functions.h
+/home/yudi/Documents/programming/projetos/calculator/C2/src/terminal_functions.h
+
+/home/yudi/Documents/programming/projetos/calculator/C2/tests/random_tests/ungetc_str.c
+stdio.h
+-
+terminal_functions.h
+/home/yudi/Documents/programming/projetos/calculator/C2/tests/random_tests/terminal_functions.h
+

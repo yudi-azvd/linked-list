@@ -1,12 +1,9 @@
-# NOT FINISHED
+# Calculadora
+(Ainda em desenvolvimento)
 
-# calculator
-basic calculator written in C using some Data Structure concepts.
+Calculadoras implementadas em três linguagens "diferentes".
 
-<br>
+##
 
-## files
-tester.py will test all .txt files and compare the result to the a file.
-
-## some facts
-  - Yes, some lists are used as stacks.
+## Noobs
+Aqui vão as instruções que só querem usar a calculadora ~que é uma ferramenta muito útil nessa modernidade~

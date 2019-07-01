@@ -1,0 +1,6 @@
+/home/yudi/Documents/programming/projetos/calculator/C2/build/CMakeFiles/ungetc_str.dir
+/home/yudi/Documents/programming/projetos/calculator/C2/build/CMakeFiles/edit_cache.dir
+/home/yudi/Documents/programming/projetos/calculator/C2/build/CMakeFiles/main.dir
+/home/yudi/Documents/programming/projetos/calculator/C2/build/CMakeFiles/calculator.dir
+/home/yudi/Documents/programming/projetos/calculator/C2/build/CMakeFiles/rebuild_cache.dir
+/home/yudi/Documents/programming/projetos/calculator/C2/build/CMakeFiles/test_terminal_functions.dir
