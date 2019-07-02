@@ -1,14 +1,19 @@
 #include "list.h"
 
+/*
+    malloc não zera os bytes da espaço de memória alocado.
+    Por isso calloc é usado no lugar de malloc.
+*/
+
 t_node* create_node(void* data) {
-    t_node* node = (t_node*) malloc(sizeof(t_node));
+    t_node* node = (t_node*) calloc(sizeof(t_node), 1);
     node->data = data;
     return node;
 }
 
 
 t_list* create_list() {
-    t_list* list = (t_list*) malloc(sizeof(t_list));
+    t_list* list = (t_list*) calloc(sizeof(t_list), 1);
 
     list->head = NULL;
     list->tail = NULL;
@@ -18,7 +23,16 @@ t_list* create_list() {
 }
 
 
+int is_empty(t_list* list) {
+    return (( list->head == NULL) && (list->head == list->tail));
+}
+
+
+// retornar o nó?
 void insert_front(t_list* list, void* data) {
+    if (list == NULL || data == NULL)
+        return;
+
     t_node* new_node = create_node(data);
 
     list->length++;
@@ -35,22 +49,22 @@ void insert_front(t_list* list, void* data) {
 
 // fazer retornar data ou o node.
 void* remove_head(t_list* list) {
+    if (list == NULL || list->head == NULL)
+        return NULL;
+
+    // removed?
+    t_node* to_remove = list->head;
+    void* data = to_remove->data;
+    list->head = list->head->next;
+    free(to_remove);
 
     if (list->head == NULL) {
-        return NULL;
+        list->tail == NULL;
+        printf("ptr %p\n", list->tail);
     }
-    else {
-        // removed?
-        t_node* to_remove = list->head;
-        list->head = list->head->next;
-        free(to_remove);
 
-        if (list->head == NULL) {
-            list->tail == NULL;
-        }
-
-        list->length--;
-    }
+    list->length--;
+    return data;
 }
 
 

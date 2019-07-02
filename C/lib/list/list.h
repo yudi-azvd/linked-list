@@ -6,7 +6,7 @@
 
 typedef struct node {
     void* data;
-    struct node *next;
+    struct node* next;
 } t_node;
 
 
@@ -22,6 +22,8 @@ typedef struct list {
 
 
 t_list* create_list();
+
+int is_empty(t_list* list);
 
 
 void insert_front(t_list* list, void* data);
