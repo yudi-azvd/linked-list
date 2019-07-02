@@ -5,12 +5,12 @@
 #include <stdlib.h>
 
 typedef struct node {
-    void *data;
+    void* data;
     struct node *next;
 } t_node;
 
 
-t_node* new_node(void* data);
+t_node* create_node(void* data);
 
 
 typedef struct list {
@@ -18,20 +18,23 @@ typedef struct list {
     t_node* tail;
 
     int length;
-
-
 } t_list;
 
 
-t_list* new_list();
+t_list* create_list();
 
 
+void insert_front(t_list* list, void* data);
+
+void* remove_head(t_list* list);
+
+void clear(t_list* list);
 /*
 
 funções tipadas pra lista:
     comparar
     to_str
-    
+
 
 */
 

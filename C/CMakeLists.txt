@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.10.2)
 # project(calculator LANGUAGES C CXX)
 project(calculator)
 # set(CMAKE_CXX_STANDARD 14)
+set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -ansi")
 
 # Bring the headers, such as Student.h into the project
 include_directories(
