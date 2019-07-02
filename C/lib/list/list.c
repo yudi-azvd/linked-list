@@ -51,6 +51,7 @@ void insert_front(t_list* list, void* data) {
 void* remove_head(t_list* list) {
     if (list == NULL || list->head == NULL)
         return NULL;
+        //
 
     // removed?
     t_node* to_remove = list->head;
