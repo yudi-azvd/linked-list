@@ -4,6 +4,10 @@ Ainda em desenvolvimento.
 ## O que ela faz?
 Bem, é só uma calculadora.
 
+## A fazer
+[] reorganizar estrutura do projeto. Deixar `.c` e `.h` nos
+mesmos diretórios.
+
 
 
 <!-- how to C libraries

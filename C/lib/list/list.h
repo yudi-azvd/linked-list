@@ -17,7 +17,8 @@ typedef struct list_t {
     t_node* head;
     t_node* tail;
 
-    void (*print_func)(t_node* node);
+    void (*print)(struct list_t* list);
+
 
     int length;
 } t_list;
@@ -28,6 +29,11 @@ t_list* create_list();
 
 int is_empty(t_list* list);
 
+void print_str_list(t_list* list);
+
+void print_int_list(t_list* list);
+
+void print(t_list* list);
 
 void insert_front(t_list* list, void* data);
 
@@ -35,7 +41,6 @@ void* remove_head(t_list* list);
 
 void clear(t_list* list);
 
-void print_str_list(t_node* node);
 
 /*
 
