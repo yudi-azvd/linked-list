@@ -13,14 +13,14 @@ Bem, ainda nada. Não tá pronta.
 ## Como usar
 (na verdade, só baixar mesmo. Não funciona nada ainda)
 
-### Baixe o repositório:
+### Baixe o repositório
 Abra o terminal e digite:
 
 `$ git clone https://github.com/y-azvd/calculator.git`
 
 Ou clique no botão verde no diretório raíz desse repositório.
 
-### Depois de ter baixado:
+### Depois de ter baixado
 ```
 $ cd calculator/C/build
 $ cmake ..
