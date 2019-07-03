@@ -29,6 +29,9 @@ $ make
 
 É normal demorar um pouco pra compilar porque os testes são realizados utilizando o framework [Catch2](https://github.com/catchorg/Catch2).
 
+## Fazendo
+Implementação de uma "biblioteca" de lista lincada genérica. Está em `lib/list` (ainda estou aprendendo como organizar os arquivos).
+
 
 <!-- how to C libraries
   https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
