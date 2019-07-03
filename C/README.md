@@ -27,7 +27,7 @@ $ cmake ..
 $ make
 ```
 
-É normal demorar um pouco pra compilar porque os testes são realizados utilizando o framework Catch2.
+É normal demorar um pouco pra compilar porque os testes são realizados utilizando o framework [Catch2](https://github.com/catchorg/Catch2).
 
 
 <!-- how to C libraries
