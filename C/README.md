@@ -1,10 +1,33 @@
 # Calculadora
-Ainda em desenvolvimento.
-
-<br>
+Ainda em desenvolvimento (não tá pronto).
 
 ## O que ela faz?
-Bem, é só uma calculadora
+Bem, é só uma calculadora.
+
+## Dependendências
+* gcc
+* g++
+* [CMake](https://cmake.org/)
+* make
+
+## Como usar
+(na verdade, só baixar mesmo. Não funciona nada ainda)
+* Baixe o repositório com `git clone`:
+
+`$ git clone https://github.com/y-azvd/calculator.git`
+
+Ou clique no botão verde no diretório raíz desse repositório.
+
+* Depois de ter baixado:
+```
+$ cd calculator/C/build
+$ cmake ..
+$ make
+```
+
+É normal demorar um pouco pra compilar porque os testes são realizados utilizando o framework Catch2.
+
+
 
 
 
