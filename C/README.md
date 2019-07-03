@@ -1,5 +1,4 @@
 # Calculadora
-Ainda em desenvolvimento.
 
 ## O que ela faz?
 Bem, ainda nada. Não tá pronta.
