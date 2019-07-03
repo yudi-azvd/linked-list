@@ -1,4 +1,5 @@
 # Calculadora
+~~Quem é programador de verdade programa em C.~~
 
 ## O que ela faz?
 Bem, ainda nada. Não tá pronta.
@@ -16,7 +17,9 @@ Bem, ainda nada. Não tá pronta.
 ### Baixe o repositório
 Abra o terminal e digite:
 
-`$ git clone https://github.com/y-azvd/calculator.git`
+```
+$ git clone https://github.com/y-azvd/calculator.git
+```
 
 Ou clique no botão verde no diretório raíz desse repositório.
 
