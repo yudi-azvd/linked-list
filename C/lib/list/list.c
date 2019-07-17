@@ -6,7 +6,7 @@
 */
 
 t_node* create_node(void* data) {
-    t_node* node = (t_node*) calloc(sizeof(t_node), 1);
+    t_node* node = (t_node*) calloc(1, sizeof(t_node));
     node->data = data;
     node->next = NULL;
     return node;
@@ -14,22 +14,26 @@ t_node* create_node(void* data) {
 
 
 t_list* create_list(void (*print)(t_list* list)) {
-    t_list* list = (t_list*) calloc(sizeof(t_list), 1);
+    t_list* list = (t_list*) calloc(1, sizeof(t_list));
 
     list->head = NULL;
     list->tail = NULL;
     list->length = 0;
 
     list->print = print;
+    /* list->compare = compare; */
 
     return list;
 }
 
-// ainda não é bem o que eu queria
-// eu devia chmar uma função genérica.
-// é uma cópia do ponteiro list->head
-// funções privadas em C: https://stackoverflow.com/questions/1401781/how-to-implement-a-private-restricted-function-in-c
-// Para fins de depuração
+
+/**
+ ainda não é bem o que eu queria
+ eu devia chmar uma função genérica.
+ é uma cópia do ponteiro list->head
+ funções privadas em C: https://stackoverflow.com/questions/1401781/how-to-implement-a-private-restricted-function-in-c
+ Para fins de depuração
+ */
 void print_str_list(t_list* list) {
     t_node* curr_node = list->head;
     printf("str_list:");
@@ -45,7 +49,7 @@ void print_str_list(t_list* list) {
 
 void print_int_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("int_list:");
+    printf("int_list: ");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("%d ", *(int*) curr_node->data);
@@ -55,18 +59,21 @@ void print_int_list(t_list* list) {
     printf("\n");
 }
 
+
 void print(t_list* list) {
     list->print(list);
 }
 
 
 int is_empty(t_list* list) {
-    return ((list->head == NULL) && (list->head == list->tail));
+    return ( list == NULL
+        || ((list->head == NULL)
+         && (list->tail == NULL) ));
 }
 
 
-// retornar o nó?
-void insert_front(t_list* list, void* data) {
+/* retornar o nó? */
+void insert_head(t_list* list, void* data) {
     if (list == NULL || data == NULL)
         return;
 
@@ -75,53 +82,44 @@ void insert_front(t_list* list, void* data) {
     list->length++;
     if(list->head == NULL && list->tail == NULL) {
         list->head = new_node;
-        // list->tail = new_node;
-        list->tail = list->head;
-        printf("insrtfrnt l->t: %p\n", list->tail);
-        printf("new_node->next: %p\n", new_node->next);
-        printf("insrtfrnt l->t->n: %p\n", list->tail->next);
+        list->tail = new_node;
     }
     else {
         new_node->next = list->head;
         list->head = new_node;
-        // list->head->next = new_node;
     }
-    printf("insrtfrnt l->t: %p\n", list->tail);
 }
 
 
-// fazer retornar data ou o node.
+/*
+quem chama essa função dever ser o reposnsável por
+liberar memória apontada por data */
 void* remove_head(t_list* list) {
-    // list->head = NULL;
-    printf("list->head %p\n", (list->head));
     if (list == NULL || list->head == NULL)
         return NULL;
 
-    // removed?
     t_node* to_remove = list->head;
     void* data = to_remove->data;
     list->head = list->head->next;
     free(to_remove);
 
-    if (list->head == NULL) {
-        list->tail == NULL;
-        printf("&(list->tail) %p\n", &(list->tail));
-        printf("list->tail %p\n", (list->tail));
-    }
+    if (list->head == NULL)
+        /* Fiquei um tempão pq a linha seguinte tava assim:
+        list->tail == NULL; */
+        list->tail = NULL;
 
     list->length--;
     return data;
 }
 
 
-// void clear(t_list* list) {
-//     t_node* curr_node = list->head;
-//
-//     while(list->head != NULL) {
-//         free(curr_node);
-//         curr_node = curr_node->next;
-//     }
-//
-//     list->head = NULL;
-//     list->tail = NULL;
-// }
+void delete_head(t_list* list) {
+    void* data = remove_head(list);
+    free(data);
+}
+
+
+void clear(t_list* list) {
+    while(!is_empty(list))
+        delete_head(list);
+}

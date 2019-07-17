@@ -9,7 +9,6 @@ typedef struct node {
     struct node* next;
 } t_node;
 
-
 t_node* create_node(void* data);
 
 
@@ -19,12 +18,11 @@ typedef struct list_t {
 
     void (*print)(struct list_t* list);
 
-
     int length;
 } t_list;
 
 
-t_list* create_list();
+t_list* create_list(void (*print)(t_list* list));
 
 
 int is_empty(t_list* list);
@@ -35,11 +33,16 @@ void print_int_list(t_list* list);
 
 void print(t_list* list);
 
-void insert_front(t_list* list, void* data);
+void insert_head(t_list* list, void* data);
+
 
 void* remove_head(t_list* list);
 
+
 void clear(t_list* list);
+
+void clear2(t_list* list);
+
 
 
 /*

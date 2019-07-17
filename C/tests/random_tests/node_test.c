@@ -4,7 +4,9 @@
 int main() {
 
     t_node* node = create_node("hey");
-    t_node* curr_node = node;
+    /* t_node* curr_node = node; */
+
+
 
     free(node);
 

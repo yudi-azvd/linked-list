@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 3.10.2)
 
 # project(calculator LANGUAGES C CXX)
 project(calculator)
-# set(CMAKE_CXX_STANDARD 14)
-set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -ansi")
+
 
 # Bring the headers, such as Student.h into the project
 include_directories(
@@ -15,13 +14,10 @@ include_directories(
 	src/
 
 	tests/terminal_functions/
+	tests/list/
 	tests/random_tests/
 )
 
-# Can manually add the sources using the set command as follows:
-#set(SOURCES src/mainapp.c src/Student.c)
-
-# However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES
 	"src/terminal_functions.c"
 )
@@ -40,21 +36,41 @@ file(GLOB TEST_SOURCES_RANDOM_TESTS
 	"tests/random_tests/*.c"
 )
 
-# message(STATUS "random tests: ${TEST_SOURCES_RANDOM_TESTS}")
+file(GLOB TEST_SOURCES_LIST
+	"tests/list/*.cpp"
+)
 
+set_source_files_properties(
+	TEST_SOURCES_RANDOM_TESTS
+	PROPERTIES
+		LANGUAGE C
+		COMPILE_FLAGS "-Wall -ansi"
+)
+set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -ansi")
+# é o jeito que deu certo compilar código em C no padrão ANSI.
+set(CMAKE_C_FLAGS "-Wall -ansi")
+
+# message(STATUS "random tests: ${TEST_SOURCES_RANDOM_TESTS}")
 
 # add_library(includes ${INC_SOURCES} ${INC_HEADERS})
 
 add_executable(calculator ${SOURCES} src/calculator.c)
 target_link_libraries(calculator ${LIBS})
 
-add_executable(
-	test_terminal_functions
-	${SOURCES}
- 	${TEST_SOURCES_TERMINAL_FUNCTIONS}
-)
+# add_executable(
+# 	test_terminal_functions
+# 	${SOURCES}
+#  	${TEST_SOURCES_TERMINAL_FUNCTIONS}
+# )
 
-# compilar os testes aletórios
+# add_executable(
+# 	test_list
+# 	${SOURCES}
+#  	${TEST_SOURCES_LIST}
+# 	${LIBS}
+# )
+
+# Compilar os testes aletórios
 foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})
 	get_filename_component(executable ${src_file} NAME_WE)
 	message(STATUS "exec ${executable}")
