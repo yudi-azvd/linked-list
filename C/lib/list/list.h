@@ -41,8 +41,6 @@ void* remove_head(t_list* list);
 
 void clear(t_list* list);
 
-void clear2(t_list* list);
-
 
 
 /*
