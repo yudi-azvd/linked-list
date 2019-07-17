@@ -5,8 +5,6 @@
 
 int main() {
     t_list* list = create_list(&print_int_list);
-    char str1[] = "string";
-    char str2[] = "new string";
 
     printf("empty: %d\n", is_empty(list));
     int a = 5;

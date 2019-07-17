@@ -27,38 +27,6 @@ t_list* create_list(void (*print)(t_list* list)) {
 }
 
 
-/**
- ainda não é bem o que eu queria
- eu devia chmar uma função genérica.
- é uma cópia do ponteiro list->head
- funções privadas em C: https://stackoverflow.com/questions/1401781/how-to-implement-a-private-restricted-function-in-c
- Para fins de depuração
- */
-void print_str_list(t_list* list) {
-    t_node* curr_node = list->head;
-    printf("str_list:");
-    if (curr_node != NULL) {
-        while (curr_node != NULL) {
-            printf("\"%s\" ", (char*) curr_node->data);
-            curr_node = curr_node->next;
-        }
-    }
-    printf("\n");
-}
-
-
-void print_int_list(t_list* list) {
-    t_node* curr_node = list->head;
-    printf("int_list: ");
-    if (curr_node != NULL) {
-        while (curr_node != NULL) {
-            printf("%d ", *(int*) curr_node->data);
-            curr_node = curr_node->next;
-        }
-    }
-    printf("\n");
-}
-
 
 void print(t_list* list) {
     list->print(list);
@@ -90,6 +58,18 @@ void insert_head(t_list* list, void* data) {
     }
 }
 
+void insert_tail(t_list* list, void* data) {
+    if (list == NULL || data == NULL)
+        return;
+
+    /*
+    t_node* new_node = create_node(data);
+    */
+
+    list->length++;
+
+
+}
 
 /*
 quem chama essa função dever ser o reposnsável por
@@ -122,4 +102,39 @@ void delete_head(t_list* list) {
 void clear(t_list* list) {
     while(!is_empty(list))
         delete_head(list);
+}
+
+
+
+
+/**
+ ainda não é bem o que eu queria
+ eu devia chmar uma função genérica.
+ é uma cópia do ponteiro list->head
+ funções privadas em C: https://stackoverflow.com/questions/1401781/how-to-implement-a-private-restricted-function-in-c
+ Para fins de depuração
+ */
+void print_str_list(t_list* list) {
+    t_node* curr_node = list->head;
+    printf("str_list:");
+    if (curr_node != NULL) {
+        while (curr_node != NULL) {
+            printf("\"%s\" ", (char*) curr_node->data);
+            curr_node = curr_node->next;
+        }
+    }
+    printf("\n");
+}
+
+
+void print_int_list(t_list* list) {
+    t_node* curr_node = list->head;
+    printf("int_list: ");
+    if (curr_node != NULL) {
+        while (curr_node != NULL) {
+            printf("%d ", *(int*) curr_node->data);
+            curr_node = curr_node->next;
+        }
+    }
+    printf("\n");
 }

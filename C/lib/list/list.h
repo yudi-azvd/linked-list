@@ -21,35 +21,28 @@ typedef struct list_t {
     int length;
 } t_list;
 
-
 t_list* create_list(void (*print)(t_list* list));
 
-
 int is_empty(t_list* list);
-
-void print_str_list(t_list* list);
-
-void print_int_list(t_list* list);
 
 void print(t_list* list);
 
 void insert_head(t_list* list, void* data);
 
+void insert_tail(t_list* list, void* data);
 
 void* remove_head(t_list* list);
 
+void delete_head(t_list* list);
 
 void clear(t_list* list);
 
 
 
-/*
+/* funções tipadas para listas */
+void print_str_list(t_list* list);
 
-funções tipadas pra lista:
-    comparar
-    to_str
+void print_int_list(t_list* list);
 
-
-*/
 
 #endif
