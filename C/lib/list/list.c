@@ -73,23 +73,22 @@ void insert_head(t_list* list, void* data) {
     }
 }
 
-
 void insert_tail(t_list* list, void* data) {
-    if(list == NULL || data == NULL)
+    if (list == NULL || data == NULL)
         return;
 
+    /*
     t_node* new_node = create_node(data);
+    */
 
     list->length++;
-    if(list->head == NULL && list->tail == NULL)
-        list->head = new_node;
-    else
-        list->tail->next = new_node;
 
-    list->tail = new_node;
+
 }
 
-
+/*
+quem chama essa função dever ser o reposnsável por
+liberar memória apontada por data */
 void* remove_head(t_list* list) {
     if (list == NULL || list->head == NULL)
         return NULL;
@@ -139,10 +138,12 @@ void soft_clear(t_list* list) {
 
 void print_str_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("str: ");
-    while (curr_node != NULL) {
-        printf("\"%s\" ", (char*) curr_node->data);
-        curr_node = curr_node->next;
+    printf("str_list:");
+    if (curr_node != NULL) {
+        while (curr_node != NULL) {
+            printf("\"%s\" ", (char*) curr_node->data);
+            curr_node = curr_node->next;
+        }
     }
     printf("\n");
 }
@@ -150,10 +151,12 @@ void print_str_list(t_list* list) {
 
 void print_int_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("int: ");
-    while (curr_node != NULL) {
-        printf("%d ", *(int*) curr_node->data);
-        curr_node = curr_node->next;
+    printf("int_list: ");
+    if (curr_node != NULL) {
+        while (curr_node != NULL) {
+            printf("%d ", *(int*) curr_node->data);
+            curr_node = curr_node->next;
+        }
     }
     printf("\n");
 }

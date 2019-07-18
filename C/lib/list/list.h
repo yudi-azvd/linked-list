@@ -48,10 +48,15 @@ typedef struct list_t {
     t_node* head;	/**< Ponteiro para o primeiro item. */
     t_node* tail;	/**< Ponteiro para o último item. */
 
+<<<<<<< HEAD
     int length;
 
     void (*print)(struct list_t* list);	/** Ponteiro para função de imprimir */
+=======
+    void (*print)(struct list_t* list);
+>>>>>>> parent of f19f8b6... acho que terminei o básico de list.h. Falta documentação.
 
+    int length;
 } t_list;
 
 
@@ -68,6 +73,7 @@ typedef struct list_t {
  */
 t_list* create_list(void (*print)(t_list* list));
 
+<<<<<<< HEAD
 
 /**
  * @brief      Retorna
@@ -96,6 +102,8 @@ void* get_tail(t_list* list);
  *
  * @return     True if empty, False otherwise.
  */
+=======
+>>>>>>> parent of f19f8b6... acho que terminei o básico de list.h. Falta documentação.
 int is_empty(t_list* list);
 
 
@@ -140,8 +148,6 @@ void delete_head(t_list* list);
 
 void clear(t_list* list);
 
-void soft_clear(t_list* list);
-
 
 
 /* funções tipadas para listas */
@@ -163,6 +169,7 @@ void print_str_list(t_list* list);
 void print_int_list(t_list* list);
 
 
+<<<<<<< HEAD
 /**
  * Definição de Stack
  *
@@ -178,4 +185,6 @@ void* soft_pop(t_stack* stack);
 void* peek(t_stack* stack);
 
 
+=======
+>>>>>>> parent of f19f8b6... acho que terminei o básico de list.h. Falta documentação.
 #endif
