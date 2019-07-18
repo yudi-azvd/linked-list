@@ -47,7 +47,7 @@ int main() {
     insert_head(list, &b);
     print(list);
 
-    clear(list);
+    soft_clear(list);
     free(list);
 
     return 0;

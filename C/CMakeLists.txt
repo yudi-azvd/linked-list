@@ -63,12 +63,12 @@ target_link_libraries(calculator ${LIBS})
 #  	${TEST_SOURCES_TERMINAL_FUNCTIONS}
 # )
 
-# add_executable(
-# 	test_list
-# 	${SOURCES}
-#  	${TEST_SOURCES_LIST}
-# 	${LIBS}
-# )
+add_executable(
+	test_list
+	${SOURCES}
+ 	${TEST_SOURCES_LIST}
+	${LIBS}
+)
 
 # Compilar os testes aletórios
 foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})

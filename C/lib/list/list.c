@@ -26,6 +26,20 @@ t_list* create_list(void (*print)(t_list* list)) {
     return list;
 }
 
+void* get_head(t_list* list) {
+    if(is_empty(list))
+        return NULL;
+    else
+        return list->head->data;
+}
+
+
+void* get_tail(t_list* list) {
+    if(is_empty(list))
+        return NULL;
+    else
+        return list->tail->data;
+}
 
 
 void print(t_list* list) {
@@ -58,21 +72,25 @@ void insert_head(t_list* list, void* data) {
     }
 }
 
+
 void insert_tail(t_list* list, void* data) {
-    if (list == NULL || data == NULL)
+    if(list == NULL || data == NULL)
         return;
 
-    /*
     t_node* new_node = create_node(data);
-    */
 
     list->length++;
+    if(list->head == NULL && list->tail == NULL)
+        list->head = new_node;
+    else
+        list->tail->next = new_node;
 
-
+    list->tail = new_node;
 }
 
+
 /*
-quem chama essa função dever ser o reposnsável por
+quem chama essa função dever ser o reponsável por
 liberar memória apontada por data */
 void* remove_head(t_list* list) {
     if (list == NULL || list->head == NULL)
@@ -104,7 +122,10 @@ void clear(t_list* list) {
         delete_head(list);
 }
 
-
+void soft_clear(t_list* list) {
+    while(!is_empty(list))
+        remove_head(list);
+}
 
 
 /**
@@ -116,12 +137,10 @@ void clear(t_list* list) {
  */
 void print_str_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("str_list:");
-    if (curr_node != NULL) {
-        while (curr_node != NULL) {
-            printf("\"%s\" ", (char*) curr_node->data);
-            curr_node = curr_node->next;
-        }
+    printf("str: ");
+    while (curr_node != NULL) {
+        printf("\"%s\" ", (char*) curr_node->data);
+        curr_node = curr_node->next;
     }
     printf("\n");
 }
@@ -129,12 +148,35 @@ void print_str_list(t_list* list) {
 
 void print_int_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("int_list: ");
-    if (curr_node != NULL) {
-        while (curr_node != NULL) {
-            printf("%d ", *(int*) curr_node->data);
-            curr_node = curr_node->next;
-        }
+    printf("int: ");
+    while (curr_node != NULL) {
+        printf("%d ", *(int*) curr_node->data);
+        curr_node = curr_node->next;
     }
     printf("\n");
 }
+
+
+/*=============================================>>>>>
+= Stack =
+===============================================>>>>>*/
+void push(t_stack* stack, void* data) {
+    insert_head(stack, data);
+}
+
+void pop(t_stack* stack) {
+     delete_head(stack);
+}
+
+void* soft_pop(t_stack* stack) {
+    return remove_head(stack);
+}
+
+void* peek(t_stack* stack) {
+    return get_head(stack);
+}
+
+
+
+/*= End of Stack =*/
+/*=============================================<<<<<*/

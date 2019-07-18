@@ -1,6 +1,4 @@
-#define CATCH_CONFIG_MAIN
-// #include "catch2/catch.hpp"
-#include <catch2/catch.hpp> // apenas se Catch2 estiver instalado no seu computador
+#include "catch2/catch.hpp"
 
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.
