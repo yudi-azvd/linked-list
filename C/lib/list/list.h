@@ -1,12 +1,8 @@
 
 /**
  * @file 		list.h
- *
  * @author     	Yudi Yamane de Azevedo
- *
- * @date        9 Sep 2019
- *
- * @brief      	Definição do tipo list_t e suas funções.
+ * @brief      	Definição do tipo t_list e suas funções.
  *
  * É uma pequena lista de operações em listas.
  * Inspirada em https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h
@@ -23,12 +19,10 @@
 /**
  * @brief      Nó com ponteiro para dado genérico.
  *
- * Não sei direito como dizer pro Doxygen que t_node
- * que é o tipo de dado que estou definindo de fato.
  */
-typedef struct node_t {
+typedef struct t_node {
     void* data;			/**< Ponteiro para um tipo de dado genérico. */
-    struct node_t* next;	/**< Ponteiro para o próximo nó. */
+    struct t_node* next;	/**< Ponteiro para o próximo nó. */
 } t_node;
 
 
@@ -45,16 +39,14 @@ t_node* create_node(void* data);
 /**
  * @brief      Lista simplesmente lincada.
  *
- * Não sei direito como dizer pro Doxygen que t_list
- * que é o tipo de dado que estou definindo de fato.
  */
-typedef struct list_t {
+typedef struct t_list {
     t_node* head;	/**< Ponteiro para o primeiro item. */
     t_node* tail;	/**< Ponteiro para o último item. */
 
-    int length;
+    int length;		/**< Comprimento da lista. */
 
-    void (*print)(struct list_t* list);	/** Ponteiro para função de imprimir */
+    void (*print)(struct t_list* list);	/** Ponteiro para função de imprimir */
 
 } t_list;
 
@@ -71,6 +63,7 @@ typedef struct list_t {
  * @return     Ponteiro para a lista criada dinamicamente.
  */
 t_list* create_list(void (*print)(t_list* list));
+
 
 /**
  * @brief      Retorna

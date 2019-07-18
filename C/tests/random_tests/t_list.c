@@ -5,7 +5,6 @@
 
 int main() {
     t_list* list = create_list(&print_int_list);
-    list_t* l = create_list(&print_int_list);
 
     soft_clear(list);
     free(list);
