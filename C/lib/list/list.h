@@ -23,6 +23,8 @@
 /**
  * @brief      Nó com ponteiro para dado genérico.
  *
+ * Não sei direito como dizer pro Doxygen que t_node
+ * que é o tipo de dado que estou definindo de fato.
  */
 typedef struct node_t {
     void* data;			/**< Ponteiro para um tipo de dado genérico. */
@@ -43,6 +45,8 @@ t_node* create_node(void* data);
 /**
  * @brief      Lista simplesmente lincada.
  *
+ * Não sei direito como dizer pro Doxygen que t_list
+ * que é o tipo de dado que estou definindo de fato.
  */
 typedef struct list_t {
     t_node* head;	/**< Ponteiro para o primeiro item. */
@@ -135,6 +139,11 @@ liberar memória apontada por data */
  */
 void* remove_head(t_list* list);
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      list  The list
+ */
 void delete_head(t_list* list);
 
 void clear(t_list* list);

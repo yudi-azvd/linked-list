@@ -21,10 +21,7 @@ typedef struct \mbox{\hyperlink{structnode__t}{node\+\_\+t}} \mbox{\hyperlink{li
 \begin{DoxyCompactList}\small\item\em Nó com ponteiro para dado genérico. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structlist__t}{list\+\_\+t}} \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}}
 \begin{DoxyCompactList}\small\item\em Lista simplesmente lincada. \end{DoxyCompactList}\item 
-typedef \mbox{\hyperlink{structlist__t}{list\+\_\+t}} \mbox{\hyperlink{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}{stack\+\_\+t}}
-\item 
-\mbox{\Hypertarget{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}\label{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}} 
-typedef \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} {\bfseries t\+\_\+stack}
+typedef \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} \mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Funções}
 \begin{DoxyCompactItemize}
@@ -47,9 +44,8 @@ void \mbox{\hyperlink{list_8h_aadb8ee7eb28d4b70fd3e61177d6e95b2}{insert\+\_\+tai
 \begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
 void $\ast$ \mbox{\hyperlink{list_8h_a4ad31b8f15b2eb1bf91b430591f4e011}{remove\+\_\+head}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
 \begin{DoxyCompactList}\small\item\em Removes a head. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{list_8h_a2856474aa1a64f60a649cc55d84e5633}\label{list_8h_a2856474aa1a64f60a649cc55d84e5633}} 
-void {\bfseries delete\+\_\+head} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
-\item 
+void \mbox{\hyperlink{list_8h_a2856474aa1a64f60a649cc55d84e5633}{delete\+\_\+head}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_adf788835199c3cc0faeee83d1a5174f0}{clear}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
 \begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_a78961805bdb4393433523317d8163e20}{soft\+\_\+clear}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
@@ -59,13 +55,13 @@ void \mbox{\hyperlink{list_8h_a7b79392e3a1156b0c077dd6749c19cfd}{print\+\_\+str\
 \mbox{\Hypertarget{list_8h_a11162c6d4ab7eb4745884d7556e64bfa}\label{list_8h_a11162c6d4ab7eb4745884d7556e64bfa}} 
 void {\bfseries print\+\_\+int\+\_\+list} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
 \item 
-void \mbox{\hyperlink{list_8h_a87f65f2ab34ec73a894eab5055eb3173}{push}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack, void $\ast$data)
+void \mbox{\hyperlink{list_8h_a87f65f2ab34ec73a894eab5055eb3173}{push}} (\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack, void $\ast$data)
 \begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{list_8h_a1d3691daad22cb3718822a88ac465ca3}{pop}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack)
+void \mbox{\hyperlink{list_8h_a1d3691daad22cb3718822a88ac465ca3}{pop}} (\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack)
 \begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{list_8h_ab324b99844e7495bb7f989e03397a819}{soft\+\_\+pop}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack)
+void $\ast$ \mbox{\hyperlink{list_8h_ab324b99844e7495bb7f989e03397a819}{soft\+\_\+pop}} (\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack)
 \begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
-void $\ast$ \mbox{\hyperlink{list_8h_ab95b0979dbef63b61aa864871c4d368f}{peek}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack)
+void $\ast$ \mbox{\hyperlink{list_8h_ab95b0979dbef63b61aa864871c4d368f}{peek}} (\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack)
 \begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -81,13 +77,7 @@ Yudi Yamane de Azevedo
 É uma pequena lista de operações em listas. Inspirada em \href{https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h}{\texttt{ https\+://github.\+com/\+Devon\+Crawford/\+Video-\/\+Editing-\/\+Automation/blob/master/include/\+Linked\+List\+A\+P\+I.\+h}} 
 
 \doxysubsection{Definições dos tipos}
-\mbox{\Hypertarget{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}\label{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}} 
-\index{list.h@{list.h}!stack\_t@{stack\_t}}
-\index{stack\_t@{stack\_t}!list.h@{list.h}}
-\doxysubsubsection{\texorpdfstring{stack\_t}{stack\_t}}
-{\footnotesize\ttfamily typedef \mbox{\hyperlink{structlist__t}{list\+\_\+t}} \mbox{\hyperlink{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}{stack\+\_\+t}}}
-
-Definição de Stack \mbox{\Hypertarget{list_8h_a77d53060c2ea3cd951293515ddbbab30}\label{list_8h_a77d53060c2ea3cd951293515ddbbab30}} 
+\mbox{\Hypertarget{list_8h_a77d53060c2ea3cd951293515ddbbab30}\label{list_8h_a77d53060c2ea3cd951293515ddbbab30}} 
 \index{list.h@{list.h}!t\_list@{t\_list}}
 \index{t\_list@{t\_list}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{t\_list}{t\_list}}
@@ -97,7 +87,7 @@ Definição de Stack \mbox{\Hypertarget{list_8h_a77d53060c2ea3cd951293515ddbbab3
 
 Lista simplesmente lincada. 
 
-\mbox{\Hypertarget{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}\label{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}} 
+Não sei direito como dizer pro Doxygen que t\+\_\+list que é o tipo de dado que estou definindo de fato. \mbox{\Hypertarget{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}\label{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}} 
 \index{list.h@{list.h}!t\_node@{t\_node}}
 \index{t\_node@{t\_node}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{t\_node}{t\_node}}
@@ -107,7 +97,13 @@ Lista simplesmente lincada.
 
 Nó com ponteiro para dado genérico. 
 
+Não sei direito como dizer pro Doxygen que t\+\_\+node que é o tipo de dado que estou definindo de fato. \mbox{\Hypertarget{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}\label{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}} 
+\index{list.h@{list.h}!t\_stack@{t\_stack}}
+\index{t\_stack@{t\_stack}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_stack}{t\_stack}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} \mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}}}
 
+Definição de Stack 
 
 \doxysubsection{Funções}
 \mbox{\Hypertarget{list_8h_adf788835199c3cc0faeee83d1a5174f0}\label{list_8h_adf788835199c3cc0faeee83d1a5174f0}} 
@@ -161,6 +157,21 @@ Cria um nó dinamicamente.
 \begin{DoxyReturn}{Retorna}
 Ponteiro para o eapço alocado. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a2856474aa1a64f60a649cc55d84e5633}\label{list_8h_a2856474aa1a64f60a649cc55d84e5633}} 
+\index{list.h@{list.h}!delete\_head@{delete\_head}}
+\index{delete\_head@{delete\_head}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{delete\_head()}{delete\_head()}}
+{\footnotesize\ttfamily void delete\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{list_8h_a789f6b76264a087ec9ae790dc86ef7de}\label{list_8h_a789f6b76264a087ec9ae790dc86ef7de}} 
 \index{list.h@{list.h}!get\_head@{get\_head}}
 \index{get\_head@{get\_head}!list.h@{list.h}}
@@ -253,7 +264,7 @@ True if empty, False otherwise.
 \index{list.h@{list.h}!peek@{peek}}
 \index{peek@{peek}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{peek()}{peek()}}
-{\footnotesize\ttfamily void$\ast$ peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
 
 
 
@@ -271,7 +282,7 @@ True if empty, False otherwise.
 \index{list.h@{list.h}!pop@{pop}}
 \index{pop@{pop}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{pop()}{pop()}}
-{\footnotesize\ttfamily void pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
 
 
 
@@ -316,7 +327,7 @@ ainda não é bem o que eu queria eu devia chmar uma função genérica. é uma 
 \index{list.h@{list.h}!push@{push}}
 \index{push@{push}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{push()}{push()}}
-{\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
 
 
 
@@ -366,7 +377,7 @@ Removes a head.
 \index{list.h@{list.h}!soft\_pop@{soft\_pop}}
 \index{soft\_pop@{soft\_pop}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{soft\_pop()}{soft\_pop()}}
-{\footnotesize\ttfamily void$\ast$ soft\+\_\+pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ soft\+\_\+pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
 
 
 

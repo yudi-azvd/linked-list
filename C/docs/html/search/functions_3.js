@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['peek',['peek',['../list_8h.html#ab95b0979dbef63b61aa864871c4d368f',1,'list.c']]],
-  ['pop',['pop',['../list_8h.html#a1d3691daad22cb3718822a88ac465ca3',1,'list.c']]],
-  ['print',['print',['../list_8h.html#a0d0f16dda83dde274b1604e8fe5b5c17',1,'list.c']]],
-  ['print_5fstr_5flist',['print_str_list',['../list_8h.html#a7b79392e3a1156b0c077dd6749c19cfd',1,'list.c']]],
-  ['push',['push',['../list_8h.html#a87f65f2ab34ec73a894eab5055eb3173',1,'list.c']]]
+  ['insert_5fhead',['insert_head',['../list_8h.html#a7bc16ed006377d2eb4cd5a7cba829fc1',1,'list.c']]],
+  ['insert_5ftail',['insert_tail',['../list_8h.html#aadb8ee7eb28d4b70fd3e61177d6e95b2',1,'list.c']]],
+  ['is_5fempty',['is_empty',['../list_8h.html#ab3d94767507f4903296df2a3ff20e834',1,'list.c']]]
 ];

@@ -3,9 +3,9 @@ var indexSectionsWithContent =
   0: "cdghilnprst",
   1: "ln",
   2: "l",
-  3: "cgiprs",
+  3: "cdgiprs",
   4: "dhnt",
-  5: "st"
+  5: "t"
 };
 
 var indexSectionNames =
