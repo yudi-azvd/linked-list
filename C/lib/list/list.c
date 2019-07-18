@@ -5,12 +5,14 @@
     Por isso calloc é usado no lugar de malloc.
 */
 
+
 t_node* create_node(void* data) {
     t_node* node = (t_node*) calloc(1, sizeof(t_node));
     node->data = data;
     node->next = NULL;
     return node;
 }
+
 
 
 t_list* create_list(void (*print)(t_list* list)) {
@@ -25,6 +27,7 @@ t_list* create_list(void (*print)(t_list* list)) {
 
     return list;
 }
+
 
 void* get_head(t_list* list) {
     if(is_empty(list))
@@ -42,19 +45,17 @@ void* get_tail(t_list* list) {
 }
 
 
-void print(t_list* list) {
-    list->print(list);
-}
-
-
 int is_empty(t_list* list) {
     return ( list == NULL
         || ((list->head == NULL)
          && (list->tail == NULL) ));
 }
 
+void print(t_list* list) {
+    list->print(list);
+}
 
-/* retornar o nó? */
+
 void insert_head(t_list* list, void* data) {
     if (list == NULL || data == NULL)
         return;
@@ -89,9 +90,6 @@ void insert_tail(t_list* list, void* data) {
 }
 
 
-/*
-quem chama essa função dever ser o reponsável por
-liberar memória apontada por data */
 void* remove_head(t_list* list) {
     if (list == NULL || list->head == NULL)
         return NULL;
@@ -117,24 +115,28 @@ void delete_head(t_list* list) {
 }
 
 
+/**
+ * @brief      { function_description }
+ *
+ * @param      list  The list
+ */
 void clear(t_list* list) {
     while(!is_empty(list))
         delete_head(list);
 }
 
+
+/**
+ * @brief      { function_description }
+ *
+ * @param      list  The list
+ */
 void soft_clear(t_list* list) {
     while(!is_empty(list))
         remove_head(list);
 }
 
 
-/**
- ainda não é bem o que eu queria
- eu devia chmar uma função genérica.
- é uma cópia do ponteiro list->head
- funções privadas em C: https://stackoverflow.com/questions/1401781/how-to-implement-a-private-restricted-function-in-c
- Para fins de depuração
- */
 void print_str_list(t_list* list) {
     t_node* curr_node = list->head;
     printf("str: ");
@@ -157,26 +159,49 @@ void print_int_list(t_list* list) {
 }
 
 
-/*=============================================>>>>>
-= Stack =
-===============================================>>>>>*/
+
+/**
+ * @brief      { function_description }
+ *
+ * @param      stack  The stack
+ * @param      data   The data
+ */
 void push(t_stack* stack, void* data) {
     insert_head(stack, data);
 }
 
+
+/**
+ * @brief      { function_description }
+ *
+ * @param      stack  The stack
+ */
 void pop(t_stack* stack) {
      delete_head(stack);
 }
 
+/* quem chama essa função dever ser o reponsável por
+liberar memória apontada por data */
+
+/**
+ * @brief      { function_description }
+ *
+ * @param      stack  The stack
+ *
+ * @return     { description_of_the_return_value }
+ */
 void* soft_pop(t_stack* stack) {
     return remove_head(stack);
 }
 
+
+/**
+ * @brief      { function_description }
+ *
+ * @param      stack  The stack
+ *
+ * @return     { description_of_the_return_value }
+ */
 void* peek(t_stack* stack) {
     return get_head(stack);
 }
-
-
-
-/*= End of Stack =*/
-/*=============================================<<<<<*/

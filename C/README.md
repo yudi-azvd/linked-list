@@ -1,3 +1,4 @@
+<!-- trash -->
 # Calculadora
 Ainda em desenvolvimento.
 
@@ -5,9 +6,7 @@ Ainda em desenvolvimento.
 Bem, é só uma calculadora.
 
 ## A fazer
-[] reorganizar estrutura do projeto. Deixar `.c` e `.h` nos
-mesmos diretórios.
-
+Ainda tem muita coisa pra fazer. Nem sei listar.
 
 
 <!-- how to C libraries

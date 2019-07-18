@@ -1,0 +1,382 @@
+\hypertarget{list_8h}{}\doxysection{Referência do Arquivo lib/list/list.h}
+\label{list_8h}\index{lib/list/list.h@{lib/list/list.h}}
+
+
+Definição do tipo \mbox{\hyperlink{structlist__t}{list\+\_\+t}} e suas funções.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode__t}{node\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Nó com ponteiro para dado genérico. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlist__t}{list\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Lista simplesmente lincada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Definições de Tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnode__t}{node\+\_\+t}} \mbox{\hyperlink{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}{t\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em Nó com ponteiro para dado genérico. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structlist__t}{list\+\_\+t}} \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em Lista simplesmente lincada. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{structlist__t}{list\+\_\+t}} \mbox{\hyperlink{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}{stack\+\_\+t}}
+\item 
+\mbox{\Hypertarget{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}\label{list_8h_ae82e5862bbd9ab16a295cd42f7e126c0}} 
+typedef \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} {\bfseries t\+\_\+stack}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}{t\+\_\+node}} $\ast$ \mbox{\hyperlink{list_8h_aae8546cd8c3194d2267b3fe72a791973}{create\+\_\+node}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Cria um nó dinamicamente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$ \mbox{\hyperlink{list_8h_a39857d84c3338aac9341e1718d0b8b40}{create\+\_\+list}} (void($\ast$\mbox{\hyperlink{list_8h_a0d0f16dda83dde274b1604e8fe5b5c17}{print}})(\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list))
+\begin{DoxyCompactList}\small\item\em Cria dinamicamente uma lista. Quem chama essa função deve liberar o espaço depois de usá-\/lo. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{list_8h_a789f6b76264a087ec9ae790dc86ef7de}{get\+\_\+head}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Retorna. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{list_8h_a1a839531d672d33b4575c8e6351beb63}{get\+\_\+tail}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Gets the tail. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{list_8h_ab3d94767507f4903296df2a3ff20e834}{is\+\_\+empty}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Determines if empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a0d0f16dda83dde274b1604e8fe5b5c17}{print}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Imprime a lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\+\_\+head}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_aadb8ee7eb28d4b70fd3e61177d6e95b2}{insert\+\_\+tail}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{list_8h_a4ad31b8f15b2eb1bf91b430591f4e011}{remove\+\_\+head}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Removes a head. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{list_8h_a2856474aa1a64f60a649cc55d84e5633}\label{list_8h_a2856474aa1a64f60a649cc55d84e5633}} 
+void {\bfseries delete\+\_\+head} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\item 
+void \mbox{\hyperlink{list_8h_adf788835199c3cc0faeee83d1a5174f0}{clear}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a78961805bdb4393433523317d8163e20}{soft\+\_\+clear}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a7b79392e3a1156b0c077dd6749c19cfd}{print\+\_\+str\+\_\+list}} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{list_8h_a11162c6d4ab7eb4745884d7556e64bfa}\label{list_8h_a11162c6d4ab7eb4745884d7556e64bfa}} 
+void {\bfseries print\+\_\+int\+\_\+list} (\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)
+\item 
+void \mbox{\hyperlink{list_8h_a87f65f2ab34ec73a894eab5055eb3173}{push}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{list_8h_a1d3691daad22cb3718822a88ac465ca3}{pop}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{list_8h_ab324b99844e7495bb7f989e03397a819}{soft\+\_\+pop}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{list_8h_ab95b0979dbef63b61aa864871c4d368f}{peek}} (\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em \{ function\+\_\+description \} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Definição do tipo \mbox{\hyperlink{structlist__t}{list\+\_\+t}} e suas funções. 
+
+\begin{DoxyAuthor}{Autor}
+Yudi Yamane de Azevedo
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+9 Sep 2019
+\end{DoxyDate}
+É uma pequena lista de operações em listas. Inspirada em \href{https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h}{\texttt{ https\+://github.\+com/\+Devon\+Crawford/\+Video-\/\+Editing-\/\+Automation/blob/master/include/\+Linked\+List\+A\+P\+I.\+h}} 
+
+\doxysubsection{Definições dos tipos}
+\mbox{\Hypertarget{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}\label{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}} 
+\index{list.h@{list.h}!stack\_t@{stack\_t}}
+\index{stack\_t@{stack\_t}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{stack\_t}{stack\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structlist__t}{list\+\_\+t}} \mbox{\hyperlink{list_8h_a93f0d9c55c211dc5ddcc2a2cfa3875d1}{stack\+\_\+t}}}
+
+Definição de Stack \mbox{\Hypertarget{list_8h_a77d53060c2ea3cd951293515ddbbab30}\label{list_8h_a77d53060c2ea3cd951293515ddbbab30}} 
+\index{list.h@{list.h}!t\_list@{t\_list}}
+\index{t\_list@{t\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_list}{t\_list}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structlist__t}{list\+\_\+t}}  \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}}}
+
+
+
+Lista simplesmente lincada. 
+
+\mbox{\Hypertarget{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}\label{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}} 
+\index{list.h@{list.h}!t\_node@{t\_node}}
+\index{t\_node@{t\_node}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_node}{t\_node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode__t}{node\+\_\+t}}  \mbox{\hyperlink{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}{t\+\_\+node}}}
+
+
+
+Nó com ponteiro para dado genérico. 
+
+
+
+\doxysubsection{Funções}
+\mbox{\Hypertarget{list_8h_adf788835199c3cc0faeee83d1a5174f0}\label{list_8h_adf788835199c3cc0faeee83d1a5174f0}} 
+\index{list.h@{list.h}!clear@{clear}}
+\index{clear@{clear}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_a39857d84c3338aac9341e1718d0b8b40}\label{list_8h_a39857d84c3338aac9341e1718d0b8b40}} 
+\index{list.h@{list.h}!create\_list@{create\_list}}
+\index{create\_list@{create\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{create\_list()}{create\_list()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}}$\ast$ create\+\_\+list (\begin{DoxyParamCaption}\item[{void($\ast$)(\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$list)}]{print }\end{DoxyParamCaption})}
+
+
+
+Cria dinamicamente uma lista. Quem chama essa função deve liberar o espaço depois de usá-\/lo. 
+
+
+\begin{DoxyParams}[1]{Parâmetros}
+\mbox{\texttt{ in}}  & {\em print} & Função responsável por imprimir a lista na tela. Deve ser fornecida pelo usuário. Para novos tipos de dados, o usuário deve também criar essa função.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para a lista criada dinamicamente. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_aae8546cd8c3194d2267b3fe72a791973}\label{list_8h_aae8546cd8c3194d2267b3fe72a791973}} 
+\index{list.h@{list.h}!create\_node@{create\_node}}
+\index{create\_node@{create\_node}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{create\_node()}{create\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{list_8h_a4692d9f6c0f791d3c098d1e8867e3963}{t\+\_\+node}}$\ast$ create\+\_\+node (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Cria um nó dinamicamente. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em data} & Ponteiro para um tipo de dado genérico.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o eapço alocado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a789f6b76264a087ec9ae790dc86ef7de}\label{list_8h_a789f6b76264a087ec9ae790dc86ef7de}} 
+\index{list.h@{list.h}!get\_head@{get\_head}}
+\index{get\_head@{get\_head}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{get\_head()}{get\_head()}}
+{\footnotesize\ttfamily void$\ast$ get\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Retorna. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+The head. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a1a839531d672d33b4575c8e6351beb63}\label{list_8h_a1a839531d672d33b4575c8e6351beb63}} 
+\index{list.h@{list.h}!get\_tail@{get\_tail}}
+\index{get\_tail@{get\_tail}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{get\_tail()}{get\_tail()}}
+{\footnotesize\ttfamily void$\ast$ get\+\_\+tail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Gets the tail. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+The tail. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a7bc16ed006377d2eb4cd5a7cba829fc1}\label{list_8h_a7bc16ed006377d2eb4cd5a7cba829fc1}} 
+\index{list.h@{list.h}!insert\_head@{insert\_head}}
+\index{insert\_head@{insert\_head}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{insert\_head()}{insert\_head()}}
+{\footnotesize\ttfamily void insert\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list \\
+\hline
+{\em data} & The data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_aadb8ee7eb28d4b70fd3e61177d6e95b2}\label{list_8h_aadb8ee7eb28d4b70fd3e61177d6e95b2}} 
+\index{list.h@{list.h}!insert\_tail@{insert\_tail}}
+\index{insert\_tail@{insert\_tail}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{insert\_tail()}{insert\_tail()}}
+{\footnotesize\ttfamily void insert\+\_\+tail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list \\
+\hline
+{\em data} & The data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_ab3d94767507f4903296df2a3ff20e834}\label{list_8h_ab3d94767507f4903296df2a3ff20e834}} 
+\index{list.h@{list.h}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily int is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Determines if empty. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+True if empty, False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_ab95b0979dbef63b61aa864871c4d368f}\label{list_8h_ab95b0979dbef63b61aa864871c4d368f}} 
+\index{list.h@{list.h}!peek@{peek}}
+\index{peek@{peek}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily void$\ast$ peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em stack} & The stack\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a1d3691daad22cb3718822a88ac465ca3}\label{list_8h_a1d3691daad22cb3718822a88ac465ca3}} 
+\index{list.h@{list.h}!pop@{pop}}
+\index{pop@{pop}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily void pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em stack} & The stack \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_a0d0f16dda83dde274b1604e8fe5b5c17}\label{list_8h_a0d0f16dda83dde274b1604e8fe5b5c17}} 
+\index{list.h@{list.h}!print@{print}}
+\index{print@{print}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Imprime a lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_a7b79392e3a1156b0c077dd6749c19cfd}\label{list_8h_a7b79392e3a1156b0c077dd6749c19cfd}} 
+\index{list.h@{list.h}!print\_str\_list@{print\_str\_list}}
+\index{print\_str\_list@{print\_str\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{print\_str\_list()}{print\_str\_list()}}
+{\footnotesize\ttfamily void print\+\_\+str\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+ainda não é bem o que eu queria eu devia chmar uma função genérica. é uma cópia do ponteiro list-\/$>$head funções privadas em C\+: \href{https://stackoverflow.com/questions/1401781/how-to-implement-a-private-restricted-function-in-c}{\texttt{ https\+://stackoverflow.\+com/questions/1401781/how-\/to-\/implement-\/a-\/private-\/restricted-\/function-\/in-\/c}} Para fins de depuração
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_a87f65f2ab34ec73a894eab5055eb3173}\label{list_8h_a87f65f2ab34ec73a894eab5055eb3173}} 
+\index{list.h@{list.h}!push@{push}}
+\index{push@{push}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em stack} & The stack \\
+\hline
+{\em data} & The data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_a4ad31b8f15b2eb1bf91b430591f4e011}\label{list_8h_a4ad31b8f15b2eb1bf91b430591f4e011}} 
+\index{list.h@{list.h}!remove\_head@{remove\_head}}
+\index{remove\_head@{remove\_head}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{remove\_head()}{remove\_head()}}
+{\footnotesize\ttfamily void$\ast$ remove\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Removes a head. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8h_a78961805bdb4393433523317d8163e20}\label{list_8h_a78961805bdb4393433523317d8163e20}} 
+\index{list.h@{list.h}!soft\_clear@{soft\_clear}}
+\index{soft\_clear@{soft\_clear}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{soft\_clear()}{soft\_clear()}}
+{\footnotesize\ttfamily void soft\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{list_8h_a77d53060c2ea3cd951293515ddbbab30}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em list} & The list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8h_ab324b99844e7495bb7f989e03397a819}\label{list_8h_ab324b99844e7495bb7f989e03397a819}} 
+\index{list.h@{list.h}!soft\_pop@{soft\_pop}}
+\index{soft\_pop@{soft\_pop}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{soft\_pop()}{soft\_pop()}}
+{\footnotesize\ttfamily void$\ast$ soft\+\_\+pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlist__t}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+\{ function\+\_\+description \} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em stack} & The stack\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}

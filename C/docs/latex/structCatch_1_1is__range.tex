@@ -1,0 +1,29 @@
+\hypertarget{structCatch_1_1is__range}{}\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Estrutura Catch\+::is\+\_\+range$<$ T $>$}
+\label{structCatch_1_1is__range}\index{Catch::is\_range$<$ T $>$@{Catch::is\_range$<$ T $>$}}
+\doxysubsection*{Atributos Estáticos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+static const bool {\bfseries value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{structCatch_1_1is__range_afaec39e819c3956829cbbd00feba11be}\label{structCatch_1_1is__range_afaec39e819c3956829cbbd00feba11be}} 
+\index{Catch::is\_range$<$ T $>$@{Catch::is\_range$<$ T $>$}!value@{value}}
+\index{value@{value}!Catch::is\_range$<$ T $>$@{Catch::is\_range$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const bool \mbox{\hyperlink{structCatch_1_1is__range}{Catch\+::is\+\_\+range}}$<$ T $>$\+::value\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            !std::is\_same<decltype(begin(std::declval<T>())), not\_this\_one>::value \&\&}
+\DoxyCodeLine{            !std::is\_same<decltype(end(std::declval<T>())), not\_this\_one>::value}
+
+\end{DoxyCode}
+
+
+A documentação para essa estrutura foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+lib/catch2/catch.\+hpp\end{DoxyCompactItemize}
