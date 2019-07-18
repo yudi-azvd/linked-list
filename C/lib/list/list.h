@@ -139,6 +139,8 @@ void delete_head(t_list* list);
 
 void clear(t_list* list);
 
+void soft_clear(t_list* list);
+
 
 
 /* funções tipadas para listas */
