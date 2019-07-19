@@ -54,7 +54,7 @@ t_node* create_node(void* data);
  * @brief      Lista simplesmente lincada. Está longe de ser uma biblioteca adequada
  * para essa estrutura de dados.
  *
- * Foi implementado apenas o suficiente para implementar a 
+ * Foi implementado apenas o suficiente para implementar a
  * <a href="https://github.com/y-azvd/calculator/tree/master/C">calculadora em C</a>
  *
  * Na documentação, as funções para lista estão na seção "Membros públicos". Apesar de C não ser
@@ -70,16 +70,16 @@ t_node* create_node(void* data);
  * Resumidamente, essa biblioteca libera a memória apontada pelo nó, mas a memória
  * apontada por <tt>void* data</tt> (em t_node) deve ser analisada em cada caso, dependendo
  * da aplicação do usuário, que deve escolher qual função é mais apropriada.
- * 
+ *
  * Essa lista foi testada usando <a href="http://www.valgrind.org/">valgrind</a> e a framework
- * <a href="https://github.com/catchorg/Catch2#whats-the-catch">Catch2</a>. Alguns trechos dos 
+ * <a href="https://github.com/catchorg/Catch2#whats-the-catch">Catch2</a>. Alguns trechos dos
  * arquivos testes são usados como exemplo, por isso algumas macros do Catch2 estão presentes.
  * Se você não tem familiriadade, cheque a parte
  * <a href="https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#test-cases-and-sections">
  * Testes e Seções</a>.
  *
  * @see
- * Inspirada na lista implemetada em 
+ * Inspirada na lista implemetada em
  * <a href="https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h">
  * link</a>.
  */
