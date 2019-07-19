@@ -1,0 +1,544 @@
+\hypertarget{structt__list}{}\doxysection{t\+\_\+list Struct Reference}
+\label{structt__list}\index{t\_list@{t\_list}}
+
+
+Lista simplesmente lincada. Está longe de ser uma biblioteca adequada para essa estrutura de dados.  
+
+
+
+
+{\ttfamily \#include $<$list.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{structt__list}{t\+\_\+list}} \mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}}
+\begin{DoxyCompactList}\small\item\em Definição de t\+\_\+stack. Tem compatibilidade com \mbox{\hyperlink{structt__list}{t\+\_\+list}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structt__node}{t\+\_\+node}} $\ast$ \mbox{\hyperlink{structt__list_ae0e6488e8c26845bc3ab83a51a20700c}{create\+\_\+node}} (void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Cria um nó dinamicamente. Normalmente, essa função não é chamada diretamente. É chamada por funções como \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\+\_\+head()}} e \mbox{\hyperlink{structt__list_a87f65f2ab34ec73a894eab5055eb3173}{push()}}. Pode ser considerada uma função privada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$ \mbox{\hyperlink{structt__list_aa7d94b3a49834ca1a8077d5b98214fec}{create\+\_\+list}} (const char $\ast$data\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Cria dinamicamente uma lista. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{structt__list_aa2701392584bad966b3ef9afe041bc31}{get\+\_\+head}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Retorna o dado apontado pelo primeiro item da lista. Retorna {\ttfamily N\+U\+LL} se a lista estiver vazia. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{structt__list_ad083a2ef6a0be599573a1b89a650d7a9}{get\+\_\+tail}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Retorna o dado apontado pelo último item da lista. Retorna {\ttfamily N\+U\+LL} se a lista estiver vazia. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structt__list_ab3d94767507f4903296df2a3ff20e834}{is\+\_\+empty}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Checa se a lista está vazia. É o caso de uma lista que acabou de ser criada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Para fins de deparação, imprime a lista na tela. Só deve ser usada quando foi definida o tipo de dados da lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structt__list_a0baf4f69baccf00c66d517c87aeea006}\label{structt__list_a0baf4f69baccf00c66d517c87aeea006}} 
+void \mbox{\hyperlink{structt__list_a0baf4f69baccf00c66d517c87aeea006}{compare}} ()
+\begin{DoxyCompactList}\small\item\em Não tá pronta. Não Preciso por agora. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\+\_\+head}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Insere um item no começo da lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_aadb8ee7eb28d4b70fd3e61177d6e95b2}{insert\+\_\+tail}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Insere um item no final da lista. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{structt__list_a002043e4f5f58844e2fafa135691a2e2}{remove\+\_\+head}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Remove o primeiro nó da lista e retorna seu dado e libera a memória apontada pelo nó. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a2856474aa1a64f60a649cc55d84e5633}{delete\+\_\+head}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Remove o primeiro nó da lista e libera o espaço de memória apontado por {\ttfamily data} desse nó. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_adf788835199c3cc0faeee83d1a5174f0}{clear}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Limpa a lista cujos ponteiros para dado {\bfseries{apontam}} para espaços alocados dinamicamente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a78961805bdb4393433523317d8163e20}{soft\+\_\+clear}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Limpa a lista cujos ponteiros para dado {\bfseries{não}} apontam para espaços alocados dinamicamente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a11162c6d4ab7eb4745884d7556e64bfa}{print\+\_\+int\+\_\+list}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Para fins de depuração, é chamada por \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} para listas com tipo de dados {\ttfamily int}. Pode ser considerada uma função privada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_acda523ec926b71f0c0ffc6811c0c84d1}{print\+\_\+double\+\_\+list}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Para fins de depuração, é chamada por \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} para listas com tipo de dados {\ttfamily double}. Pode ser considerada uma função privada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a7b79392e3a1156b0c077dd6749c19cfd}{print\+\_\+str\+\_\+list}} (\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Para fins de depuração, é chamada por \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} para listas com tipo de dados {\ttfamily char$\ast$} (ou "{\ttfamily string}"). Pode ser considerada uma função privada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a87f65f2ab34ec73a894eab5055eb3173}{push}} (\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Adiciona um nó ao topo da pilha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structt__list_a1d3691daad22cb3718822a88ac465ca3}{pop}} (\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Remove da pilha o nó no topo da pilha e libera o espaço de memória apontado pelo dado do nó. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{structt__list_ac3c7cffd8032adc9fbe65be10d8a7e61}{soft\+\_\+pop}} (\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Remove o nó do topo da pilha. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{structt__list_a6acc94726e85208a909776323a41e380}{peek}} (\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Retorna o ponteiro para o dado do nó no topo da pilha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structt__node}{t\+\_\+node}} $\ast$ \mbox{\hyperlink{structt__list_ad890ffb53338be5bb6c68b3b9937dbcf}{head}}
+\item 
+\mbox{\hyperlink{structt__node}{t\+\_\+node}} $\ast$ \mbox{\hyperlink{structt__list_a85deb7b8f6de22758684227fbbc1e2d8}{tail}}
+\item 
+int \mbox{\hyperlink{structt__list_ae9ab64322d2e62d0d7538008048c90fe}{length}}
+\item 
+\mbox{\Hypertarget{structt__list_adb0598881e0ae8a82c88a0adb46a96d6}\label{structt__list_adb0598881e0ae8a82c88a0adb46a96d6}} 
+void($\ast$ {\bfseries print} )(struct \mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$list)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lista simplesmente lincada. Está longe de ser uma biblioteca adequada para essa estrutura de dados. 
+
+Foi implementado apenas o suficiente para implementar a \href{https://github.com/y-azvd/calculator/tree/master/C}{\texttt{ calculadora em C}}
+
+Na documentação, as funções para lista estão na seção \char`\"{}\+Membros públicos\char`\"{}. Apesar de C não ser uma linguagem que tem suporte para orienteção objeto, as funções foram indicadas com "{\ttfamily @memberof \mbox{\hyperlink{structt__list}{t\+\_\+list}}}" para juntar a definição da estrutura de dados \mbox{\hyperlink{structt__list}{t\+\_\+list}} e suas funções na mesma página, além de dar a ideia de uma classe e seus métodos.
+
+\begin{DoxyWarning}{Warning}
+Cabe ressaltar ao usuário que a lista implementada \char`\"{}não sabe\char`\"{} se o espaço de memória apontado {\ttfamily node-\/$>$data} foi alocado dinamicamente ou não. Essa resposabilidade é deixada ao usuário (até porque não sei outra maneira de fazer isso). Esse aviso é ressaltado ao longo da documentação em algumas funções (\mbox{\hyperlink{structt__list_a002043e4f5f58844e2fafa135691a2e2}{remove\+\_\+head()}}, \mbox{\hyperlink{structt__list_a2856474aa1a64f60a649cc55d84e5633}{delete\+\_\+head()}}, \mbox{\hyperlink{structt__list_ac3c7cffd8032adc9fbe65be10d8a7e61}{soft\+\_\+pop()}}). Resumidamente, essa biblioteca libera a memória apontada pelo nó, mas a memória apontada por {\ttfamily void$\ast$ data} (em \mbox{\hyperlink{structt__node}{t\+\_\+node}}) deve ser analisada em cada caso, dependendo da aplicação do usuário, que deve escolher qual função é mais apropriada.
+\end{DoxyWarning}
+Essa lista foi testada usando \href{http://www.valgrind.org/}{\texttt{ valgrind}} e a framework \href{https://github.com/catchorg/Catch2\#whats-the-catch}{\texttt{ Catch2}}. Alguns trechos dos arquivos testes são usados como exemplo, por isso algumas macros do Catch2 estão presentes. Se você não tem familiriadade, cheque a parte \href{https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md\#test-cases-and-sections}{\texttt{ Testes e Seções}}.
+
+\begin{DoxySeeAlso}{See also}
+Inspirada na lista implemetada em \href{https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h}{\texttt{ link}}. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}\label{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}} 
+\index{t\_list@{t\_list}!t\_stack@{t\_stack}}
+\index{t\_stack@{t\_stack}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{t\_stack}{t\_stack}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{structt__list}{t\+\_\+list}} \mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}}}
+
+
+
+Definição de t\+\_\+stack. Tem compatibilidade com \mbox{\hyperlink{structt__list}{t\+\_\+list}}. 
+
+Honestamente, fiquei com preguiça de colocar esse tipo e suas funções em outro arquivo. São muito poucas. Talvez no futuro eu separe em um arquivo diferente. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structt__list_adf788835199c3cc0faeee83d1a5174f0}\label{structt__list_adf788835199c3cc0faeee83d1a5174f0}} 
+\index{t\_list@{t\_list}!clear@{clear}}
+\index{clear@{clear}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Limpa a lista cujos ponteiros para dado {\bfseries{apontam}} para espaços alocados dinamicamente. 
+
+Exemplo\+: 
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{TEST\_CASE(\textcolor{stringliteral}{"multiple insert\_head"}, \textcolor{stringliteral}{"[list]"}) \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int}* ptr\_int = (\textcolor{keywordtype}{int}*) calloc(1, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list}{t\_list}}* list = \mbox{\hyperlink{structt__list_aa7d94b3a49834ca1a8077d5b98214fec}{create\_list}}(\textcolor{stringliteral}{"int"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{    \textcolor{keywordflow}{while}(i < 3) \{}
+\DoxyCodeLine{        *ptr\_int = i;}
+\DoxyCodeLine{        \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\_head}}(list, ptr\_int);}
+\DoxyCodeLine{        ptr\_int = (\textcolor{keywordtype}{int}*) calloc(1, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{        i++;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    REQUIRE(list-\/>\mbox{\hyperlink{structt__list_ae9ab64322d2e62d0d7538008048c90fe}{length}} == 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_adf788835199c3cc0faeee83d1a5174f0}{clear}}(list);}
+\DoxyCodeLine{    free(list);}
+\DoxyCodeLine{    free(ptr\_int);}
+\DoxyCodeLine{\}}
+\end{DoxyCodeInclude}
+ 
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro para lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_aa7d94b3a49834ca1a8077d5b98214fec}\label{structt__list_aa7d94b3a49834ca1a8077d5b98214fec}} 
+\index{t\_list@{t\_list}!create\_list@{create\_list}}
+\index{create\_list@{create\_list}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{create\_list()}{create\_list()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$ create\+\_\+list (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Cria dinamicamente uma lista. 
+
+Além disso, associa as funções \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} -\/ e, futuramente, \mbox{\hyperlink{structt__list_a0baf4f69baccf00c66d517c87aeea006}{compare()}} -\/ as suas funções com os seus devidos tipos. Por enquanto tem suporte para {\ttfamily int} e {\ttfamily char$\ast$} .
+
+\begin{DoxyNote}{Note}
+Para novos tipos de dados, o usuário deve criar a sua própria versão de \mbox{\hyperlink{structt__list_aa7d94b3a49834ca1a8077d5b98214fec}{create\+\_\+list()}} e definir, a seu gosto, como associar as funções \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} e \mbox{\hyperlink{structt__list_a0baf4f69baccf00c66d517c87aeea006}{compare()}}.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Quem chama essa função deve liberar o espaço depois de usá-\/lo.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data\+\_\+type} & O tipo de dado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily \char`\"{}int\char`\"{}}, {\ttfamily \char`\"{}char$\ast$\char`\"{}} ou {\ttfamily \char`\"{}double\char`\"{}} 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a lista criada dinamicamente. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structt__list_ae0e6488e8c26845bc3ab83a51a20700c}\label{structt__list_ae0e6488e8c26845bc3ab83a51a20700c}} 
+\index{t\_list@{t\_list}!create\_node@{create\_node}}
+\index{create\_node@{create\_node}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{create\_node()}{create\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structt__node}{t\+\_\+node}} $\ast$ create\+\_\+node (\begin{DoxyParamCaption}\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Cria um nó dinamicamente. Normalmente, essa função não é chamada diretamente. É chamada por funções como \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\+\_\+head()}} e \mbox{\hyperlink{structt__list_a87f65f2ab34ec73a894eab5055eb3173}{push()}}. Pode ser considerada uma função privada. 
+
+\begin{DoxyNote}{Note}
+Só é preciso se preocupar com vazamento memória se ela for chamada diretamente.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Ponteiro genérico para um tipo de dado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o espaço alocado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structt__list_a2856474aa1a64f60a649cc55d84e5633}\label{structt__list_a2856474aa1a64f60a649cc55d84e5633}} 
+\index{t\_list@{t\_list}!delete\_head@{delete\_head}}
+\index{delete\_head@{delete\_head}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{delete\_head()}{delete\_head()}}
+{\footnotesize\ttfamily void delete\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Remove o primeiro nó da lista e libera o espaço de memória apontado por {\ttfamily data} desse nó. 
+
+\begin{DoxyNote}{Note}
+Deve ser usado {\itshape apenas} em listas cujos dados foram alocado dinamicamente.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro {\bfseries{não nulo}} para lista.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+\mbox{\Hypertarget{structt__list_aa2701392584bad966b3ef9afe041bc31}\label{structt__list_aa2701392584bad966b3ef9afe041bc31}} 
+\index{t\_list@{t\_list}!get\_head@{get\_head}}
+\index{get\_head@{get\_head}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{get\_head()}{get\_head()}}
+{\footnotesize\ttfamily void $\ast$ get\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Retorna o dado apontado pelo primeiro item da lista. Retorna {\ttfamily N\+U\+LL} se a lista estiver vazia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro {\bfseries{não nulo}} para lista.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para dado. Retorna {\ttfamily N\+U\+LL} se a lista estiver vazia. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structt__list_ad083a2ef6a0be599573a1b89a650d7a9}\label{structt__list_ad083a2ef6a0be599573a1b89a650d7a9}} 
+\index{t\_list@{t\_list}!get\_tail@{get\_tail}}
+\index{get\_tail@{get\_tail}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{get\_tail()}{get\_tail()}}
+{\footnotesize\ttfamily void $\ast$ get\+\_\+tail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Retorna o dado apontado pelo último item da lista. Retorna {\ttfamily N\+U\+LL} se a lista estiver vazia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro {\bfseries{não nulo}} para lista.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para dado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}\label{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}} 
+\index{t\_list@{t\_list}!insert\_head@{insert\_head}}
+\index{insert\_head@{insert\_head}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{insert\_head()}{insert\_head()}}
+{\footnotesize\ttfamily void insert\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Insere um item no começo da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro {\bfseries{não nulo}} para lista. \\
+\hline
+{\em data} & Ponteiro {\bfseries{não nulo}} para dado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_aadb8ee7eb28d4b70fd3e61177d6e95b2}\label{structt__list_aadb8ee7eb28d4b70fd3e61177d6e95b2}} 
+\index{t\_list@{t\_list}!insert\_tail@{insert\_tail}}
+\index{insert\_tail@{insert\_tail}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{insert\_tail()}{insert\_tail()}}
+{\footnotesize\ttfamily void insert\+\_\+tail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Insere um item no final da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro {\bfseries{não nulo}} para lista. \\
+\hline
+{\em data} & Ponteiro {\bfseries{não nulo}} para dado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_ab3d94767507f4903296df2a3ff20e834}\label{structt__list_ab3d94767507f4903296df2a3ff20e834}} 
+\index{t\_list@{t\_list}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily int is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Checa se a lista está vazia. É o caso de uma lista que acabou de ser criada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro {\bfseries{não nulo}} para lista.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se está vazio, 0 caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structt__list_a6acc94726e85208a909776323a41e380}\label{structt__list_a6acc94726e85208a909776323a41e380}} 
+\index{t\_list@{t\_list}!peek@{peek}}
+\index{peek@{peek}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily void $\ast$ peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Retorna o ponteiro para o dado do nó no topo da pilha. 
+
+\begin{DoxyWarning}{Warning}
+Se o espaço apontado pelo ponteiro foi alocado dinamicamente, quem chamou essa função é reposável por liberá-\/lo.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Ponteiro para pilha.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o dado do nó no topo da pilha. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structt__list_a1d3691daad22cb3718822a88ac465ca3}\label{structt__list_a1d3691daad22cb3718822a88ac465ca3}} 
+\index{t\_list@{t\_list}!pop@{pop}}
+\index{pop@{pop}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily void pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Remove da pilha o nó no topo da pilha e libera o espaço de memória apontado pelo dado do nó. 
+
+\begin{DoxyNote}{Note}
+Deve ser usado {\itshape apenas} em pilhas cujos dados foram alocados dinamicamente. Semelhante a \mbox{\hyperlink{structt__list_a002043e4f5f58844e2fafa135691a2e2}{remove\+\_\+head()}}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Ponteiro para pilha. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}\label{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}} 
+\index{t\_list@{t\_list}!print@{print}}
+\index{print@{print}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Para fins de deparação, imprime a lista na tela. Só deve ser usada quando foi definida o tipo de dados da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro para lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_acda523ec926b71f0c0ffc6811c0c84d1}\label{structt__list_acda523ec926b71f0c0ffc6811c0c84d1}} 
+\index{t\_list@{t\_list}!print\_double\_list@{print\_double\_list}}
+\index{print\_double\_list@{print\_double\_list}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{print\_double\_list()}{print\_double\_list()}}
+{\footnotesize\ttfamily void print\+\_\+double\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Para fins de depuração, é chamada por \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} para listas com tipo de dados {\ttfamily double}. Pode ser considerada uma função privada. 
+
+\begin{DoxyNote}{Note}
+Não precisa ser chamada diretamente.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro para lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_a11162c6d4ab7eb4745884d7556e64bfa}\label{structt__list_a11162c6d4ab7eb4745884d7556e64bfa}} 
+\index{t\_list@{t\_list}!print\_int\_list@{print\_int\_list}}
+\index{print\_int\_list@{print\_int\_list}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{print\_int\_list()}{print\_int\_list()}}
+{\footnotesize\ttfamily void print\+\_\+int\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Para fins de depuração, é chamada por \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} para listas com tipo de dados {\ttfamily int}. Pode ser considerada uma função privada. 
+
+\begin{DoxyNote}{Note}
+Não precisa ser chamada diretamente.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro para lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_a7b79392e3a1156b0c077dd6749c19cfd}\label{structt__list_a7b79392e3a1156b0c077dd6749c19cfd}} 
+\index{t\_list@{t\_list}!print\_str\_list@{print\_str\_list}}
+\index{print\_str\_list@{print\_str\_list}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{print\_str\_list()}{print\_str\_list()}}
+{\footnotesize\ttfamily void print\+\_\+str\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Para fins de depuração, é chamada por \mbox{\hyperlink{structt__list_a0d0f16dda83dde274b1604e8fe5b5c17}{print()}} para listas com tipo de dados {\ttfamily char$\ast$} (ou "{\ttfamily string}"). Pode ser considerada uma função privada. 
+
+\begin{DoxyNote}{Note}
+Não precisa ser chamada diretamente.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro para lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_a87f65f2ab34ec73a894eab5055eb3173}\label{structt__list_a87f65f2ab34ec73a894eab5055eb3173}} 
+\index{t\_list@{t\_list}!push@{push}}
+\index{push@{push}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Adiciona um nó ao topo da pilha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Ponteiro {\bfseries{não nulo}} para pilha. \\
+\hline
+{\em data} & Ponteiro {\bfseries{não nulo}} para o dado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_a002043e4f5f58844e2fafa135691a2e2}\label{structt__list_a002043e4f5f58844e2fafa135691a2e2}} 
+\index{t\_list@{t\_list}!remove\_head@{remove\_head}}
+\index{remove\_head@{remove\_head}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{remove\_head()}{remove\_head()}}
+{\footnotesize\ttfamily void $\ast$ remove\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Remove o primeiro nó da lista e retorna seu dado e libera a memória apontada pelo nó. 
+
+\begin{DoxyWarning}{Warning}
+Quem chama essa função dever ser o reponsável por liberar memória apontada por data.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro {\bfseries{não nulo}} para lista.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O ponteiro para o primeiro dado da lista.
+\end{DoxyReturn}
+Em constraste, ver \mbox{\hyperlink{structt__list_a2856474aa1a64f60a649cc55d84e5633}{delete\+\_\+head()}}. \mbox{\Hypertarget{structt__list_a78961805bdb4393433523317d8163e20}\label{structt__list_a78961805bdb4393433523317d8163e20}} 
+\index{t\_list@{t\_list}!soft\_clear@{soft\_clear}}
+\index{soft\_clear@{soft\_clear}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{soft\_clear()}{soft\_clear()}}
+{\footnotesize\ttfamily void soft\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list}{t\+\_\+list}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Limpa a lista cujos ponteiros para dado {\bfseries{não}} apontam para espaços alocados dinamicamente. 
+
+Nos exemplos abaixo não há chamada de funções como {\ttfamily malloc()} ou {\ttfamily calloc()} para alocar memória para os dados a serem armazenados na lista. 
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list}{t\_list}}* integers = \mbox{\hyperlink{structt__list_aa7d94b3a49834ca1a8077d5b98214fec}{create\_list}}(\textcolor{stringliteral}{"int"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} a = 5;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\_head}}(integers, \&a);}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a78961805bdb4393433523317d8163e20}{soft\_clear}}(integers);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\_head}}(integers, \&a);}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a78961805bdb4393433523317d8163e20}{soft\_clear}}(integers);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    free(integers);}
+\end{DoxyCodeInclude}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list}{t\_list}}* strings = \mbox{\hyperlink{structt__list_aa7d94b3a49834ca1a8077d5b98214fec}{create\_list}}(\textcolor{stringliteral}{"char*"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} str1[] = \textcolor{stringliteral}{"lista"};}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} str2[] = \textcolor{stringliteral}{"abacaxi"};}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} str3[] = \textcolor{stringliteral}{"land rover"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\_head}}(strings, str1);}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\_head}}(strings, str2);}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a7bc16ed006377d2eb4cd5a7cba829fc1}{insert\_head}}(strings, str3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} str[15];}
+\DoxyCodeLine{    strcpy(str, (\textcolor{keywordtype}{char}*) \mbox{\hyperlink{structt__list_aa2701392584bad966b3ef9afe041bc31}{get\_head}}(strings));}
+\DoxyCodeLine{}
+\DoxyCodeLine{    REQUIRE(strcmp(str, \textcolor{stringliteral}{"land rover"}) == 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{structt__list_a78961805bdb4393433523317d8163e20}{soft\_clear}}(strings);}
+\DoxyCodeLine{    free(strings);}
+\end{DoxyCodeInclude}
+ Em contraste, ver \mbox{\hyperlink{structt__list_adf788835199c3cc0faeee83d1a5174f0}{clear()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Ponteiro para lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structt__list_ac3c7cffd8032adc9fbe65be10d8a7e61}\label{structt__list_ac3c7cffd8032adc9fbe65be10d8a7e61}} 
+\index{t\_list@{t\_list}!soft\_pop@{soft\_pop}}
+\index{soft\_pop@{soft\_pop}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{soft\_pop()}{soft\_pop()}}
+{\footnotesize\ttfamily void $\ast$ soft\+\_\+pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structt__list_ae82e5862bbd9ab16a295cd42f7e126c0}{t\+\_\+stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Remove o nó do topo da pilha. 
+
+\begin{DoxyWarning}{Warning}
+Quem chama essa função dever ser o reponsável por liberar memória apontada por data.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Ponteiro para pilha.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o dado do nó que estava no topo da pilha. Retorna {\ttfamily N\+U\+LL} se a pilha está vazia. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structt__list_ad890ffb53338be5bb6c68b3b9937dbcf}\label{structt__list_ad890ffb53338be5bb6c68b3b9937dbcf}} 
+\index{t\_list@{t\_list}!head@{head}}
+\index{head@{head}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structt__node}{t\+\_\+node}}$\ast$ t\+\_\+list\+::head}
+
+Ponteiro para o primeiro item. \mbox{\Hypertarget{structt__list_ae9ab64322d2e62d0d7538008048c90fe}\label{structt__list_ae9ab64322d2e62d0d7538008048c90fe}} 
+\index{t\_list@{t\_list}!length@{length}}
+\index{length@{length}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily int t\+\_\+list\+::length}
+
+Comprimento da lista. \mbox{\Hypertarget{structt__list_a85deb7b8f6de22758684227fbbc1e2d8}\label{structt__list_a85deb7b8f6de22758684227fbbc1e2d8}} 
+\index{t\_list@{t\_list}!tail@{tail}}
+\index{tail@{tail}!t\_list@{t\_list}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structt__node}{t\+\_\+node}}$\ast$ t\+\_\+list\+::tail}
+
+Ponteiro para o último item. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/list/\mbox{\hyperlink{list_8h}{list.\+h}}\end{DoxyCompactItemize}

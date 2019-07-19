@@ -26,13 +26,13 @@ int main() {
     scanf("%s", str3);
     printf("str3: %s\n", str3);
 
-    //
     char str4[] = "olha soh";
     ungetstr(str, stdin);
     scanf("%[^\n]%*c", str4);
 
     printf("%d\n", strlen(str) == strlen(str4));
-    for (size_t i = 0; i < strlen(str); i++) {
+    int i;
+    for (i = 0; i < strlen(str); i++) {
         printf("[%c] [%c]\n", str4[i], str[i]);
     }
 

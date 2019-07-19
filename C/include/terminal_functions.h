@@ -10,8 +10,9 @@ void getstr(char *str, int size, FILE *stream);
 
 void getusrinput(char *str, int size);
 
-// void get_usr_input(void (*function)(),
-//                    char *str,
-//                    int size);
+/* void get_usr_input(void (*function)(),
+                    char *str,
+                    int size);
+ */
 
 #endif

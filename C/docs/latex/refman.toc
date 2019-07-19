@@ -1,0 +1,55 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Main Page}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Calculadora}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}O que ela faz?}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}A fazer}{1}{subsection.1.1.2}
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}t\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}list Struct Reference}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}*}{7}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}*}{7}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}*}{8}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Detailed Description}{8}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Member Typedef Documentation}{9}{subsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.5.1}t\_stack}{9}{subsubsection.4.1.5.1}
+\contentsline {subsection}{\numberline {4.1.6}Member Function Documentation}{9}{subsection.4.1.6}
+\contentsline {subsubsection}{\numberline {4.1.6.1}clear()}{9}{subsubsection.4.1.6.1}
+\contentsline {subsubsection}{\numberline {4.1.6.2}create\_list()}{10}{subsubsection.4.1.6.2}
+\contentsline {subsubsection}{\numberline {4.1.6.3}create\_node()}{10}{subsubsection.4.1.6.3}
+\contentsline {subsubsection}{\numberline {4.1.6.4}delete\_head()}{11}{subsubsection.4.1.6.4}
+\contentsline {subsubsection}{\numberline {4.1.6.5}get\_head()}{11}{subsubsection.4.1.6.5}
+\contentsline {subsubsection}{\numberline {4.1.6.6}get\_tail()}{11}{subsubsection.4.1.6.6}
+\contentsline {subsubsection}{\numberline {4.1.6.7}insert\_head()}{12}{subsubsection.4.1.6.7}
+\contentsline {subsubsection}{\numberline {4.1.6.8}insert\_tail()}{12}{subsubsection.4.1.6.8}
+\contentsline {subsubsection}{\numberline {4.1.6.9}is\_empty()}{12}{subsubsection.4.1.6.9}
+\contentsline {subsubsection}{\numberline {4.1.6.10}peek()}{13}{subsubsection.4.1.6.10}
+\contentsline {subsubsection}{\numberline {4.1.6.11}pop()}{13}{subsubsection.4.1.6.11}
+\contentsline {subsubsection}{\numberline {4.1.6.12}print()}{13}{subsubsection.4.1.6.12}
+\contentsline {subsubsection}{\numberline {4.1.6.13}print\_double\_list()}{15}{subsubsection.4.1.6.13}
+\contentsline {subsubsection}{\numberline {4.1.6.14}print\_int\_list()}{15}{subsubsection.4.1.6.14}
+\contentsline {subsubsection}{\numberline {4.1.6.15}print\_str\_list()}{15}{subsubsection.4.1.6.15}
+\contentsline {subsubsection}{\numberline {4.1.6.16}push()}{16}{subsubsection.4.1.6.16}
+\contentsline {subsubsection}{\numberline {4.1.6.17}remove\_head()}{16}{subsubsection.4.1.6.17}
+\contentsline {subsubsection}{\numberline {4.1.6.18}soft\_clear()}{16}{subsubsection.4.1.6.18}
+\contentsline {subsubsection}{\numberline {4.1.6.19}soft\_pop()}{17}{subsubsection.4.1.6.19}
+\contentsline {subsection}{\numberline {4.1.7}Member Data Documentation}{17}{subsection.4.1.7}
+\contentsline {subsubsection}{\numberline {4.1.7.1}head}{17}{subsubsection.4.1.7.1}
+\contentsline {subsubsection}{\numberline {4.1.7.2}length}{18}{subsubsection.4.1.7.2}
+\contentsline {subsubsection}{\numberline {4.1.7.3}tail}{18}{subsubsection.4.1.7.3}
+\contentsline {section}{\numberline {4.2}t\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}\_\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}node Struct Reference}{18}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}*}{18}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Detailed Description}{18}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Member Data Documentation}{18}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}data}{18}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}next}{18}{subsubsection.4.2.3.2}
+\contentsline {chapter}{\numberline {5}File Documentation}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}lib/list/list.h File Reference}{19}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}*}{19}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}*}{19}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Detailed Description}{20}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Typedef Documentation}{20}{subsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.4.1}t\_list}{20}{subsubsection.5.1.4.1}
+\contentsline {chapter}{Index}{21}{section*.1}

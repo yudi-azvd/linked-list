@@ -1,0 +1,61 @@
+\hypertarget{list_8h}{}\doxysection{lib/list/list.h File Reference}
+\label{list_8h}\index{lib/list/list.h@{lib/list/list.h}}
+
+
+Definição do tipo \mbox{\hyperlink{structt__list}{t\+\_\+list}} e suas funções.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structt__node}{t\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em Nó com ponteiro para dado genérico e com ponteiro para o próximo nó. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structt__list}{t\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em Lista simplesmente lincada. Está longe de ser uma biblioteca adequada para essa estrutura de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{list_8h_a843c13912eb8cf83c6d0aa97e046249e}\label{list_8h_a843c13912eb8cf83c6d0aa97e046249e}} 
+typedef struct \mbox{\hyperlink{structt__node}{t\+\_\+node}} \mbox{\hyperlink{list_8h_a843c13912eb8cf83c6d0aa97e046249e}{t\+\_\+node}}
+\begin{DoxyCompactList}\small\item\em Nó com ponteiro para dado genérico e com ponteiro para o próximo nó. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structt__list}{t\+\_\+list}} \mbox{\hyperlink{list_8h_a7526631cb59c7e2fb9743a2724ac84a3}{t\+\_\+list}}
+\begin{DoxyCompactList}\small\item\em Lista simplesmente lincada. Está longe de ser uma biblioteca adequada para essa estrutura de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definição do tipo \mbox{\hyperlink{structt__list}{t\+\_\+list}} e suas funções. 
+
+\begin{DoxyAuthor}{Author}
+Yudi Yamane de Azevedo
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18 de julho de 2019
+\end{DoxyDate}
+É uma pequena lista de operações em listas simplemente lincadas. Inspirada em \href{https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h}{\texttt{ https\+://github.\+com/\+Devon\+Crawford/\+Video-\/\+Editing-\/\+Automation/blob/master/include/\+Linked\+List\+A\+P\+I.\+h}} 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{list_8h_a7526631cb59c7e2fb9743a2724ac84a3}\label{list_8h_a7526631cb59c7e2fb9743a2724ac84a3}} 
+\index{list.h@{list.h}!t\_list@{t\_list}}
+\index{t\_list@{t\_list}!list.h@{list.h}}
+\doxysubsubsection{\texorpdfstring{t\_list}{t\_list}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structt__list}{t\+\_\+list}}  \mbox{\hyperlink{structt__list}{t\+\_\+list}}}
+
+
+
+Lista simplesmente lincada. Está longe de ser uma biblioteca adequada para essa estrutura de dados. 
+
+Foi implementado apenas o suficiente para implementar a \href{https://github.com/y-azvd/calculator/tree/master/C}{\texttt{ calculadora em C}}
+
+Na documentação, as funções para lista estão na seção \char`\"{}\+Membros públicos\char`\"{}. Apesar de C não ser uma linguagem que tem suporte para orienteção objeto, as funções foram indicadas com "{\ttfamily @memberof \mbox{\hyperlink{structt__list}{t\+\_\+list}}}" para juntar a definição da estrutura de dados \mbox{\hyperlink{structt__list}{t\+\_\+list}} e suas funções na mesma página, além de dar a ideia de uma classe e seus métodos.
+
+\begin{DoxyWarning}{Warning}
+Cabe ressaltar ao usuário que a lista implementada \char`\"{}não sabe\char`\"{} se o espaço de memória apontado {\ttfamily node-\/$>$data} foi alocado dinamicamente ou não. Essa resposabilidade é deixada ao usuário (até porque não sei outra maneira de fazer isso). Esse aviso é ressaltado ao longo da documentação em algumas funções (\mbox{\hyperlink{structt__list_a002043e4f5f58844e2fafa135691a2e2}{remove\+\_\+head()}}, \mbox{\hyperlink{structt__list_a2856474aa1a64f60a649cc55d84e5633}{delete\+\_\+head()}}, \mbox{\hyperlink{structt__list_ac3c7cffd8032adc9fbe65be10d8a7e61}{soft\+\_\+pop()}}). Resumidamente, essa biblioteca libera a memória apontada pelo nó, mas a memória apontada por {\ttfamily void$\ast$ data} (em \mbox{\hyperlink{structt__node}{t\+\_\+node}}) deve ser analisada em cada caso, dependendo da aplicação do usuário, que deve escolher qual função é mais apropriada.
+\end{DoxyWarning}
+Essa lista foi testada usando \href{http://www.valgrind.org/}{\texttt{ valgrind}} e a framework \href{https://github.com/catchorg/Catch2\#whats-the-catch}{\texttt{ Catch2}}. Alguns trechos dos arquivos testes são usados como exemplo, por isso algumas macros do Catch2 estão presentes. Se você não tem familiriadade, cheque a parte \href{https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md\#test-cases-and-sections}{\texttt{ Testes e Seções}}.
+
+\begin{DoxySeeAlso}{See also}
+Inspirada na lista implemetada em \href{https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h}{\texttt{ link}}. 
+\end{DoxySeeAlso}
