@@ -12,8 +12,10 @@ Por enquanto, nada. Acabei de terminar a implemetação de lista. Tá funcionand
 * CMake
 
 ## A fazer
-Ainda tem muita coisa pra fazer. Nem sei listar. Tenho que organizar um 
+Ainda tem muita coisa pra fazer. Nem sei listar. Tenho que organizar um
 quadro Scrum/Kanbam.
+
+## Não tá indo
 
 
 
