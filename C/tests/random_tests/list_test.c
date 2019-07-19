@@ -4,7 +4,7 @@
 #include "list.h"
 
 int main() {
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
     printf("empty: %d\n", is_empty(list));
     int a = 5;
@@ -47,7 +47,7 @@ int main() {
     insert_head(list, &b);
     print(list);
 
-    clear(list);
+    soft_clear(list);
     free(list);
 
     return 0;

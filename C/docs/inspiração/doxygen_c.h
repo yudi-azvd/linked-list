@@ -28,6 +28,7 @@
  * or by an at symbol @@.
  * @see http://www.stack.nl/~dimitri/doxygen/docblocks.html
  * @see http://www.stack.nl/~dimitri/doxygen/commands.html
+ * @see http://fnch.users.sourceforge.net/doxygen_c.html
  */
 
 #ifndef _BOX_PROTOTYPES_DOXYGEN_H

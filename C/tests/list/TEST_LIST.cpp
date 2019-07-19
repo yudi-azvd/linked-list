@@ -14,7 +14,7 @@ extern "C" {
 
 
 TEST_CASE("create, insert, remove e free(list)", "[list]") {
-    t_list* integers = create_list(&print_int_list);
+    t_list* integers = create_list("int");
 
     int a = 5;
 
@@ -30,7 +30,8 @@ TEST_CASE("create, insert, remove e free(list)", "[list]") {
 // soft_clear é para listas cujas ponteiros data não foram
 // alocados dinamicamente.
 TEST_CASE("create, insert_head, soft_clear e free(list)", "[list]") {
-    t_list* integers = create_list(&print_int_list);
+    //! [soft_clear_1]
+    t_list* integers = create_list("int");
 
     int a = 5;
 
@@ -41,11 +42,13 @@ TEST_CASE("create, insert_head, soft_clear e free(list)", "[list]") {
     soft_clear(integers);
 
     free(integers);
+    //! [soft_clear_1]
 }
 
 
 TEST_CASE("get_head", "[list]") {
-    t_list* strings = create_list(&print_str_list);
+    //! [soft_clear_2]
+    t_list* strings = create_list("char*");
 
     char str1[] = "lista";
     char str2[] = "abacaxi";
@@ -62,10 +65,11 @@ TEST_CASE("get_head", "[list]") {
 
     soft_clear(strings);
     free(strings);
+    //! [soft_clear_2]
 }
 
 TEST_CASE("get_tail", "[list]") {
-    t_list* strings = create_list(&print_str_list);
+    t_list* strings = create_list("char*");
 
     char str1[] = "lista";
     char str2[] = "abacaxi";
@@ -88,9 +92,10 @@ TEST_CASE("get_tail", "[list]") {
 }
 
 
+//! [clear_1]
 TEST_CASE("multiple insert_head", "[list]") {
     int* ptr_int = (int*) calloc(1, sizeof(int));
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
     int i = 0;
     while(i < 3) {
@@ -106,10 +111,11 @@ TEST_CASE("multiple insert_head", "[list]") {
     free(list);
     free(ptr_int);
 }
+//! [clear_1]
 
 TEST_CASE("multiple insert_tail", "[list]") {
     int* ptr_int = (int*) calloc(1, sizeof(int));
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
     int i = 0;
     while(i < 5) {
@@ -120,17 +126,19 @@ TEST_CASE("multiple insert_tail", "[list]") {
     }
 
     REQUIRE(list->length == 5);
+    REQUIRE(*((int*) get_tail(list)) == 4);
+    REQUIRE(*((int*) get_head(list)) == 0);
 
-    print(list);
+    // print(list);
     clear(list);
     free(list);
     free(ptr_int);
 }
 
 
-TEST_CASE("sections", "[list]") {
+TEST_CASE("delete_head", "[list]") {
     int* ptr_int = (int*) calloc(1, sizeof(int));
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
     SECTION("created list is empty") {
         REQUIRE(is_empty(list) == true);

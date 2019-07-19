@@ -57,18 +57,18 @@ set(CMAKE_C_FLAGS "-Wall -ansi")
 add_executable(calculator ${SOURCES} src/calculator.c)
 target_link_libraries(calculator ${LIBS})
 
-# add_executable(
-# 	test_terminal_functions
-# 	${SOURCES}
-#  	${TEST_SOURCES_TERMINAL_FUNCTIONS}
-# )
+add_executable(
+	test_terminal_functions
+	${SOURCES}
+ 	${TEST_SOURCES_TERMINAL_FUNCTIONS}
+)
 
-# add_executable(
-# 	test_list
-# 	${SOURCES}
-#  	${TEST_SOURCES_LIST}
-# 	${LIBS}
-# )
+add_executable(
+	test_list
+	${SOURCES}
+ 	${TEST_SOURCES_LIST}
+	${LIBS}
+)
 
 # Compilar os testes aletórios
 foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})

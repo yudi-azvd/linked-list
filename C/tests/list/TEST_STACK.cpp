@@ -11,10 +11,11 @@ extern "C" {
 }
 #endif
 
+
 TEST_CASE("stack basic", "[stack]") {
     const int S_SIZE = 5;
     int* data = (int*) calloc(1, sizeof(int));
-    t_stack* s = create_list(&print_int_list);
+    t_stack* s = create_list("int");
 
     SECTION("push") {
         int i = 0;

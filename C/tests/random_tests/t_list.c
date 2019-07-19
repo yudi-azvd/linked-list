@@ -4,7 +4,7 @@
 #include "list.h"
 
 int main() {
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
     soft_clear(list);
     free(list);

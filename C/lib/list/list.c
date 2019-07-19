@@ -14,16 +14,27 @@ t_node* create_node(void* data) {
 }
 
 
-
-t_list* create_list(void (*print)(t_list* list)) {
+t_list* create_list(const char* data_type) {
     t_list* list = (t_list*) calloc(1, sizeof(t_list));
 
     list->head = NULL;
     list->tail = NULL;
     list->length = 0;
 
-    list->print = print;
-    /* list->compare = compare; */
+    if(strcmp("int", data_type) == 0) {
+        list->print = &print_int_list;
+        /* list->compare = compare; */
+    }
+    else if(strcmp("char*", data_type) == 0) {
+        list->print = &print_str_list;
+    }
+    else if(strcmp("double", data_type) == 0) {
+        list->print = &print_double_list;
+    }
+    else {
+        printf("Not accepted argument: %s\n", data_type);
+        exit(1);
+    }
 
     return list;
 }
@@ -51,6 +62,7 @@ int is_empty(t_list* list) {
          && (list->tail == NULL) ));
 }
 
+
 void print(t_list* list) {
     list->print(list);
 }
@@ -73,22 +85,23 @@ void insert_head(t_list* list, void* data) {
     }
 }
 
+
 void insert_tail(t_list* list, void* data) {
     if (list == NULL || data == NULL)
         return;
 
-    /*
     t_node* new_node = create_node(data);
-    */
 
     list->length++;
+    if(list->head == NULL && list->tail == NULL)
+        list->head = new_node;
+    else
+        list->tail->next = new_node;
 
-
+    list->tail = new_node;
 }
 
-/*
-quem chama essa função dever ser o reposnsável por
-liberar memória apontada por data */
+
 void* remove_head(t_list* list) {
     if (list == NULL || list->head == NULL)
         return NULL;
@@ -114,38 +127,15 @@ void delete_head(t_list* list) {
 }
 
 
-/**
- * @brief      { function_description }
- *
- * @param      list  The list
- */
 void clear(t_list* list) {
     while(!is_empty(list))
         delete_head(list);
 }
 
 
-/**
- * @brief      { function_description }
- *
- * @param      list  The list
- */
 void soft_clear(t_list* list) {
     while(!is_empty(list))
         remove_head(list);
-}
-
-
-void print_str_list(t_list* list) {
-    t_node* curr_node = list->head;
-    printf("str_list:");
-    if (curr_node != NULL) {
-        while (curr_node != NULL) {
-            printf("\"%s\" ", (char*) curr_node->data);
-            curr_node = curr_node->next;
-        }
-    }
-    printf("\n");
 }
 
 
@@ -162,49 +152,50 @@ void print_int_list(t_list* list) {
 }
 
 
+void print_double_list(t_list* list) {
+    t_node* curr_node = list->head;
+    printf("double_list: ");
+    if (curr_node != NULL) {
+        while (curr_node != NULL) {
+            printf("%.2lf ", *(double*) curr_node->data);
+            curr_node = curr_node->next;
+        }
+    }
+    printf("\n");
+}
 
-/**
- * @brief      { function_description }
- *
- * @param      stack  The stack
- * @param      data   The data
- */
+
+void print_str_list(t_list* list) {
+    t_node* curr_node = list->head;
+    printf("str_list:");
+    if (curr_node != NULL) {
+        while (curr_node != NULL) {
+            printf("\"%s\" ", (char*) curr_node->data);
+            curr_node = curr_node->next;
+        }
+    }
+    printf("\n");
+}
+
+
+/**********************/
+/* Funções para Pilha */
+/**********************/
 void push(t_stack* stack, void* data) {
     insert_head(stack, data);
 }
 
 
-/**
- * @brief      { function_description }
- *
- * @param      stack  The stack
- */
 void pop(t_stack* stack) {
      delete_head(stack);
 }
 
-/* quem chama essa função dever ser o reponsável por
-liberar memória apontada por data */
 
-/**
- * @brief      { function_description }
- *
- * @param      stack  The stack
- *
- * @return     { description_of_the_return_value }
- */
 void* soft_pop(t_stack* stack) {
     return remove_head(stack);
 }
 
 
-/**
- * @brief      { function_description }
- *
- * @param      stack  The stack
- *
- * @return     { description_of_the_return_value }
- */
 void* peek(t_stack* stack) {
     return get_head(stack);
 }

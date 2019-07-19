@@ -7,7 +7,7 @@ int main() {
     int i = 0;
     int* ptr_int = (int*) calloc(1, sizeof(int));
 
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
     while(i < 4) {
         *ptr_int = i;

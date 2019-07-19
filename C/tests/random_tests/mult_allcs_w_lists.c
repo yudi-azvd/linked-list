@@ -5,7 +5,7 @@
 int main() {
     const int TAM = 5;
     int* ptr_int = (int*) calloc(1, sizeof(int));
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
     int i = 0;
     while(i < TAM) {

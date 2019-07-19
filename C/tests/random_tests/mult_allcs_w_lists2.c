@@ -4,7 +4,7 @@
 #include "list.h"
 
 int main() {
-    t_list* list = create_list(&print_int_list);
+    t_list* list = create_list("int");
 
 
     int* int_data = (int*) calloc(1, sizeof(int));
@@ -28,10 +28,8 @@ int main() {
     free(list);
 
 
-
     /* essa lista vai ser usada para string a partir de agora */
-    list = create_list(&print_str_list);
-
+    list = create_list("char*");
 
     char* data = (char*) calloc(10, sizeof(char));
     strcpy(data, "string1");
@@ -48,8 +46,6 @@ int main() {
     data = (char*) calloc(10, sizeof(char));
     strcpy(data, "quarto");
     insert_head(list, data);
-    /*
-    */
 
     print(list);
     clear(list);
