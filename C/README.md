@@ -52,23 +52,3 @@ Implementação de uma "biblioteca" de lista lincada genérica. Está em `lib/li
 ## A fazer
 Ainda tem muita coisa pra fazer. Nem sei listar. Tenho que organizar um
 quadro Scrum/Kanbam.
-
-
-
-
-
-
-
-<!-- how to C libraries
-  https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
-
-  function pointers inside struct
-  - https://stackoverflow.com/questions/1350376/function-pointer-as-a-member-of-a-c-struct
-  - https://www.youtube.com/watch?v=ReVeUvwTGdU&t=130 -->
-
-
-
-
-<!-- how to C libraries
-  https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html
- -->
