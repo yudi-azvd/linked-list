@@ -110,7 +110,7 @@ typedef struct t_list {
  * @warning    Quem chama essa função deve liberar o espaço depois de usá-lo.
  *
  * @param[in]  data_type  O tipo de dado.
- * @pre        @c "int", @c "char*" ou @c "double"
+ * @pre        @c "int", @c "char" @c "double" ou @c "char*"
  *
  * @return     Ponteiro para a lista criada dinamicamente.
  */
@@ -284,9 +284,21 @@ void print_int_list(t_list* list);
 /**
  * @memberof   t_list
  *
- * @brief      Para fins de depuração, é chamada por print() para
- * listas com tipo de dados @c double. Pode  ser considerada uma função
- * privada.
+ * @brief      Para fins de depuração, é chamada por print() para listas com tipo
+ * de dados @c char. Pode  ser considerada uma função privada.
+ *
+ * @note        Não precisa ser chamada diretamente.
+ *
+ * @param      list  Ponteiro para lista.
+ */
+void print_char_list(t_list* list);
+
+
+/**
+ * @memberof   t_list
+ *
+ * @brief      Para fins de depuração, é chamada por print() para listas com tipo
+ * de dados @c double. Pode  ser considerada uma função privada.
  *
  * @note        Não precisa ser chamada diretamente.
  *
@@ -298,9 +310,9 @@ void print_double_list(t_list* list);
 /**
  * @memberof   t_list
  *
- * @brief      Para fins de depuração, é chamada por print() para
- * listas com tipo de dados @c char* (ou \"<tt>string</tt>\"). Pode
- * ser considerada uma função privada.
+ * @brief      Para fins de depuração, é chamada por print() para listas com tipo
+ * de dados @c char* (ou \"<tt>string</tt>\"). Pode ser considerada uma função
+ * privada.
  *
  * @note 	   Não precisa ser chamada diretamente.
  *
@@ -318,9 +330,8 @@ void print_str_list(t_list* list);
  * @brief Definição de t_stack. Tem compatibilidade com
  * t_list.
  *
- * Honestamente, fiquei com preguiça de colocar esse tipo
- * e suas funções em outro arquivo. São muito poucas. Talvez
- * no futuro eu separe em um arquivo diferente.
+ * Honestamente, fiquei com preguiça de colocar esse tipo e suas funções em outro
+ * arquivo. São muito poucas. Talvez no futuro eu separe em um arquivo diferente.
  */
 typedef t_list t_stack;
 
@@ -372,7 +383,7 @@ void* soft_pop(t_stack* stack);
  * no topo da pilha.
  *
  * @warning    Se o espaço apontado pelo ponteiro foi alocado
- * dinamicamente, quem chamou essa função é reposável por
+ * dinamicamente, quem chamou essa função é responsável por
  * liberá-lo.
  *
  * @param      stack  Ponteiro para pilha.

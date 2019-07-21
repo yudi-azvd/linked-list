@@ -25,6 +25,10 @@ t_list* create_list(const char* data_type) {
         list->print = &print_int_list;
         /* list->compare = compare; */
     }
+    if(strcmp("char", data_type) == 0) {
+        list->print = &print_char_list;
+        /* list->compare = compare; */
+    }
     else if(strcmp("char*", data_type) == 0) {
         list->print = &print_str_list;
     }
@@ -150,6 +154,20 @@ void print_int_list(t_list* list) {
     }
     printf("\n");
 }
+
+
+void print_char_list(t_list* list) {
+    t_node* curr_node = list->head;
+    printf("char_list:");
+    if (curr_node != NULL) {
+        while (curr_node != NULL) {
+            printf("'%c' ", *(char*) curr_node->data);
+            curr_node = curr_node->next;
+        }
+    }
+    printf("\n");
+}
+
 
 
 void print_double_list(t_list* list) {
