@@ -1,6 +1,5 @@
 #include "terminal_functions.h"
 
-
 void ungetstr(const char *str, FILE *stream) {
     int i, len = strlen(str);
 
@@ -9,6 +8,7 @@ void ungetstr(const char *str, FILE *stream) {
         ungetc(str[i], stream);
     }
 }
+
 
 void getstr(char *str, int size, FILE *stream) {
     int i = 0;
@@ -20,6 +20,7 @@ void getstr(char *str, int size, FILE *stream) {
 
     str[i] = '\0';
 }
+
 
 void getusrinput(char *str, int size) {
     scanf("%[^\n]%*c", str);

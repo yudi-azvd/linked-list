@@ -45,7 +45,7 @@ TEST_CASE("double 4", "[list]") {
 
     REQUIRE(list->length == 2);
 
-    print(list);
+    // print(list);
     clear(list);
     free(list);
     free(ptr_double);

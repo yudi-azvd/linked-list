@@ -167,7 +167,6 @@ int is_empty(t_list* list);
 void print(t_list* list);
 
 
-
 /**
  * @memberof   t_list
  *
@@ -335,6 +334,7 @@ typedef t_list t_stack;
  */
 void push(t_stack* stack, void* data);
 
+
 /**
  * @memberof   t_list
  *
@@ -347,6 +347,7 @@ void push(t_stack* stack, void* data);
  * @param      stack Ponteiro para pilha.
  */
 void pop(t_stack* stack);
+
 
 /**
  * @memberof   t_list
@@ -362,6 +363,7 @@ void pop(t_stack* stack);
  * pilha. Retorna @c NULL se a pilha está vazia.
  */
 void* soft_pop(t_stack* stack);
+
 
 /**
  * @memberof   t_list
