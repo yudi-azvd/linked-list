@@ -25,7 +25,7 @@ t_list* create_list(const char* data_type) {
         list->print = &print_int_list;
         /* list->compare = compare; */
     }
-    if(strcmp("char", data_type) == 0) {
+    else if(strcmp("char", data_type) == 0) {
         list->print = &print_char_list;
         /* list->compare = compare; */
     }
@@ -37,6 +37,7 @@ t_list* create_list(const char* data_type) {
     }
     else {
         printf("Not accepted argument: %s\n", data_type);
+        free(list);
         exit(1);
     }
 

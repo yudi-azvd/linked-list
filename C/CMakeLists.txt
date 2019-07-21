@@ -4,14 +4,11 @@ cmake_minimum_required(VERSION 3.10.2)
 project(calculator)
 
 
-# Bring the headers, such as Student.h into the project
 include_directories(
 	lib/
 	lib/list
 
-	include/
-
-	src/
+	core/
 
 	tests/terminal_functions/
 	tests/list/
@@ -19,7 +16,8 @@ include_directories(
 )
 
 file(GLOB SOURCES
-	"src/terminal_functions.c"
+	"core/calculator.c"
+	"core/terminal_functions.c"
 )
 
 file(GLOB LIBS
@@ -40,6 +38,10 @@ file(GLOB TEST_SOURCES_LIST
 	"tests/list/*.cpp"
 )
 
+file(GLOB TEST_SOURCES_CALCULATOR
+	"tests/calculator/*.cpp"
+)
+
 set_source_files_properties(
 	TEST_SOURCES_RANDOM_TESTS
 	PROPERTIES
@@ -54,7 +56,7 @@ set(CMAKE_C_FLAGS "-Wall -ansi")
 
 # add_library(includes ${INC_SOURCES} ${INC_HEADERS})
 
-add_executable(calculator ${SOURCES} src/calculator.c)
+add_executable(calculator ${SOURCES} main/main.c)
 target_link_libraries(calculator ${LIBS})
 
 add_executable(
