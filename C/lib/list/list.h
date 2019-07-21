@@ -54,7 +54,7 @@ t_node* create_node(void* data);
  * @brief      Lista simplesmente lincada. Está longe de ser uma biblioteca adequada
  * para essa estrutura de dados.
  *
- * Foi implementado apenas o suficiente para implementar a 
+ * Foi implementado apenas o suficiente para implementar a
  * <a href="https://github.com/y-azvd/calculator/tree/master/C">calculadora em C</a>
  *
  * Na documentação, as funções para lista estão na seção "Membros públicos". Apesar de C não ser
@@ -70,16 +70,16 @@ t_node* create_node(void* data);
  * Resumidamente, essa biblioteca libera a memória apontada pelo nó, mas a memória
  * apontada por <tt>void* data</tt> (em t_node) deve ser analisada em cada caso, dependendo
  * da aplicação do usuário, que deve escolher qual função é mais apropriada.
- * 
+ *
  * Essa lista foi testada usando <a href="http://www.valgrind.org/">valgrind</a> e a framework
- * <a href="https://github.com/catchorg/Catch2#whats-the-catch">Catch2</a>. Alguns trechos dos 
+ * <a href="https://github.com/catchorg/Catch2#whats-the-catch">Catch2</a>. Alguns trechos dos
  * arquivos testes são usados como exemplo, por isso algumas macros do Catch2 estão presentes.
  * Se você não tem familiriadade, cheque a parte
  * <a href="https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#test-cases-and-sections">
  * Testes e Seções</a>.
  *
  * @see
- * Inspirada na lista implemetada em 
+ * Inspirada na lista implemetada em
  * <a href="https://github.com/DevonCrawford/Video-Editing-Automation/blob/master/include/LinkedListAPI.h">
  * link</a>.
  */
@@ -110,7 +110,7 @@ typedef struct t_list {
  * @warning    Quem chama essa função deve liberar o espaço depois de usá-lo.
  *
  * @param[in]  data_type  O tipo de dado.
- * @pre        @c "int", @c "char*" ou @c "double"
+ * @pre        @c "int", @c "char" @c "double" ou @c "char*"
  *
  * @return     Ponteiro para a lista criada dinamicamente.
  */
@@ -165,7 +165,6 @@ int is_empty(t_list* list);
  * @param      list  Ponteiro para lista.
  */
 void print(t_list* list);
-
 
 
 /**
@@ -285,9 +284,21 @@ void print_int_list(t_list* list);
 /**
  * @memberof   t_list
  *
- * @brief      Para fins de depuração, é chamada por print() para
- * listas com tipo de dados @c double. Pode  ser considerada uma função
- * privada.
+ * @brief      Para fins de depuração, é chamada por print() para listas com tipo
+ * de dados @c char. Pode  ser considerada uma função privada.
+ *
+ * @note        Não precisa ser chamada diretamente.
+ *
+ * @param      list  Ponteiro para lista.
+ */
+void print_char_list(t_list* list);
+
+
+/**
+ * @memberof   t_list
+ *
+ * @brief      Para fins de depuração, é chamada por print() para listas com tipo
+ * de dados @c double. Pode  ser considerada uma função privada.
  *
  * @note        Não precisa ser chamada diretamente.
  *
@@ -299,9 +310,9 @@ void print_double_list(t_list* list);
 /**
  * @memberof   t_list
  *
- * @brief      Para fins de depuração, é chamada por print() para
- * listas com tipo de dados @c char* (ou \"<tt>string</tt>\"). Pode
- * ser considerada uma função privada.
+ * @brief      Para fins de depuração, é chamada por print() para listas com tipo
+ * de dados @c char* (ou \"<tt>string</tt>\"). Pode ser considerada uma função
+ * privada.
  *
  * @note 	   Não precisa ser chamada diretamente.
  *
@@ -319,9 +330,8 @@ void print_str_list(t_list* list);
  * @brief Definição de t_stack. Tem compatibilidade com
  * t_list.
  *
- * Honestamente, fiquei com preguiça de colocar esse tipo
- * e suas funções em outro arquivo. São muito poucas. Talvez
- * no futuro eu separe em um arquivo diferente.
+ * Honestamente, fiquei com preguiça de colocar esse tipo e suas funções em outro
+ * arquivo. São muito poucas. Talvez no futuro eu separe em um arquivo diferente.
  */
 typedef t_list t_stack;
 
@@ -335,6 +345,7 @@ typedef t_list t_stack;
  */
 void push(t_stack* stack, void* data);
 
+
 /**
  * @memberof   t_list
  *
@@ -347,6 +358,7 @@ void push(t_stack* stack, void* data);
  * @param      stack Ponteiro para pilha.
  */
 void pop(t_stack* stack);
+
 
 /**
  * @memberof   t_list
@@ -363,6 +375,7 @@ void pop(t_stack* stack);
  */
 void* soft_pop(t_stack* stack);
 
+
 /**
  * @memberof   t_list
  *
@@ -370,7 +383,7 @@ void* soft_pop(t_stack* stack);
  * no topo da pilha.
  *
  * @warning    Se o espaço apontado pelo ponteiro foi alocado
- * dinamicamente, quem chamou essa função é reposável por
+ * dinamicamente, quem chamou essa função é responsável por
  * liberá-lo.
  *
  * @param      stack  Ponteiro para pilha.
