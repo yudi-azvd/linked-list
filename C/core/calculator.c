@@ -1,2 +1,6 @@
 #include <stdio.h>
-#include "terminal_functions.h"
+#include "list.h"
+
+int is_balanced(char expression[]) {
+    return 0;
+}

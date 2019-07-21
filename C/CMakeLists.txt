@@ -72,6 +72,13 @@ add_executable(
 	${LIBS}
 )
 
+add_executable(
+	test_calculator
+	${SOURCES}
+ 	${TEST_SOURCES_CALCULATOR}
+	${LIBS}
+)
+
 # Compilar os testes aletórios
 # foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})
 # 	get_filename_component(executable ${src_file} NAME_WE)
