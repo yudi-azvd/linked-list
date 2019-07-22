@@ -71,9 +71,9 @@ add_executable(
 )
 
 # Compilar os testes aletórios
-foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})
-	get_filename_component(executable ${src_file} NAME_WE)
-	message(STATUS "exec ${executable}")
-	add_executable(${executable} ${src_file} ${SOURCES})
-	target_link_libraries(${executable} ${LIBS})
-endforeach(src_file TEST_SOURCES_RANDOM_TESTS)
+# foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})
+# 	get_filename_component(executable ${src_file} NAME_WE)
+# 	message(STATUS "exec ${executable}")
+# 	add_executable(${executable} ${src_file} ${SOURCES})
+# 	target_link_libraries(${executable} ${LIBS})
+# endforeach(src_file TEST_SOURCES_RANDOM_TESTS)

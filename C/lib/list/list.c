@@ -25,7 +25,7 @@ t_list* create_list(const char* data_type) {
         list->print = &print_int_list;
         /* list->compare = compare; */
     }
-    if(strcmp("char", data_type) == 0) {
+    else if(strcmp("char", data_type) == 0) {
         list->print = &print_char_list;
         /* list->compare = compare; */
     }
@@ -199,6 +199,11 @@ void print_str_list(t_list* list) {
 /**********************/
 /* Funções para Pilha */
 /**********************/
+t_stack* create_stack(const char* data_type) {
+    return create_list(data_type);
+}
+
+
 void push(t_stack* stack, void* data) {
     insert_head(stack, data);
 }

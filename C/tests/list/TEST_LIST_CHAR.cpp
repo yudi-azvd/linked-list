@@ -53,7 +53,7 @@ TEST_CASE("char list", "[list-char]") {
     REQUIRE(*(char*) (get_head(chars)) == 'c');
     // REQUIRE(*(char*) (peek(chars)) == 'c');
 
-    print(chars);
+    // print(chars);
     clear(chars);
     free(chars);
     // free(data); // clear() já cuida desse ponteiro.
