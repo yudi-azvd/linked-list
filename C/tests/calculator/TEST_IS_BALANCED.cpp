@@ -7,12 +7,12 @@
 #define _TEST_CALCULATOR
 extern "C" {
 #endif
-    #include "calculator.h"
+#include "calculator.h"
 #ifdef _TEST_CALCULATOR
 }
 #endif
 
 
 TEST_CASE("test 1", "[is_balanced]") {
-    REQUIRE(is_balanced("rdm") == 0);
+    REQUIRE(is_balanced((char*) "rdm") == 0);
 }
