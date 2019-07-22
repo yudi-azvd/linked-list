@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 
-TEST_CASE("double 1", "[list]") {
+TEST_CASE("double 1", "[list_double]") {
     t_list* doubles = create_list("double");
 
     double a = 5.67;
@@ -28,7 +28,7 @@ TEST_CASE("double 1", "[list]") {
 }
 
 
-TEST_CASE("double 4", "[list]") {
+TEST_CASE("double 4", "[list_double]") {
     double i = .59;
     double* ptr_double = (double*) calloc(1, sizeof(double));
     t_list* list = create_list("double");

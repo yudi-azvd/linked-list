@@ -335,6 +335,9 @@ void print_str_list(t_list* list);
  */
 typedef t_list t_stack;
 
+t_stack* create_stack(const char* data_type);
+
+
 /**
  * @memberof   t_list
  *
