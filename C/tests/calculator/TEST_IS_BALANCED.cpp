@@ -31,10 +31,11 @@ TEST_CASE("tests on is_balanced", "[is_balanced]") {
     const int EXPRESSION_LEN_MAX = 100500; // Cem mil e quinhentos caracteres
                                            // é o maior número nos casos de teste.
 
-    char test_filename[FILENAME_MAX];   // vem de stdio.h
-    char answer_filename[FILENAME_MAX]; // vem de stdio.h
+    char test_filename[FILENAME_MAX];   // Vem de stdio.h
+    char answer_filename[FILENAME_MAX]; // Vem de stdio.h
     char expression[EXPRESSION_LEN_MAX];
 
+    // Se os executáveis mudarem de diretório, tem que mudar essas linhas.
     const char filename1[] = "../tests/calculator/check_brackets_in_code/%02d";
     const char filename2[] = "../tests/calculator/check_brackets_in_code/%02d.a";
 
@@ -58,6 +59,7 @@ TEST_CASE("tests on is_balanced", "[is_balanced]") {
                 snprintf(expression, EXPRESSION_LEN_MAX, "%s", test_line.c_str());
 
                 if (answer_line == "Success\n")
+                    // Quase que eu começo a perder a cabeça por causa do barra n.
                     REQUIRE(is_balanced(expression) == 1);
                 else
                     REQUIRE(is_balanced(expression) == 0);
