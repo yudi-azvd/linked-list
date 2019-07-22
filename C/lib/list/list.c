@@ -200,6 +200,11 @@ void print_str_list(t_list* list) {
 /**********************/
 /* Funções para Pilha */
 /**********************/
+t_stack* create_stack(const char* data_type) {
+    return create_list(data_type);
+}
+
+
 void push(t_stack* stack, void* data) {
     insert_head(stack, data);
 }
