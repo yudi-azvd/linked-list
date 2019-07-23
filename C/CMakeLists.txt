@@ -43,6 +43,10 @@ file(GLOB TEST_SOURCES_LIST
 	"tests/list/*.cpp"
 )
 
+file(GLOB TEST_SOURCES_UTIL
+	"tests/util/*.cpp"
+)
+
 file(GLOB TEST_SOURCES_CALCULATOR
 	"tests/calculator/*.cpp"
 )
@@ -53,9 +57,9 @@ set_source_files_properties(
 		LANGUAGE C
 		COMPILE_FLAGS "-Wall -ansi"
 )
-set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -ansi")
+# set(GCC_COVERAGE_COMPILE_FLAGS "-Wall -ansi -std=c99")
 # é o jeito que deu certo compilar código em C no padrão ANSI.
-set(CMAKE_C_FLAGS "-Wall -ansi")
+set(CMAKE_C_FLAGS "-Wall -ansi -std=c99")
 
 # message(STATUS "random tests: ${TEST_SOURCES_RANDOM_TESTS}")
 
@@ -73,8 +77,14 @@ add_executable(
 
 add_executable(
 	test_list
-	# ${CORE}
  	${TEST_SOURCES_LIST}
+	${LIBS}
+)
+
+add_executable(
+	test_util
+	${CORE}
+ 	${TEST_SOURCES_UTIL}
 	${LIBS}
 )
 
