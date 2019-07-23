@@ -1,7 +1,8 @@
-#define CATCH_CONFIG_MAIN
-// #include "catch2/catch.hpp"
-#include <catch2/catch.hpp> // apenas se Catch2 estiver instalado no seu computador
+#include <iostream>
+#include "catch2/catch.hpp"
 
+using std::string;
+using std::cout;
 // Esse pedaço é só pra incluir uma biblioteca
 // que deve ser tratada como código C.
 #ifndef _TERMINAL_FUNCTIONS
@@ -24,7 +25,7 @@ TEST_CASE("test ungetc function") {
     REQUIRE(g == test_char);
 }
 
-// esse teste tá esquisito
+
 TEST_CASE("test ungetstr") {
     char str[] = "hey world";
     char test_str[10];
@@ -32,7 +33,8 @@ TEST_CASE("test ungetstr") {
     ungetstr(str, stdin);
     scanf("%[^\n]%*c", test_str);
     // scanf(" %s", test_str);
+    // scanf(" %s", test_str);
 
-    REQUIRE("hey world" == str);
-    REQUIRE(test_str == "hey world");
+    REQUIRE("hey world" == string(str));
+    REQUIRE(string(test_str) == "hey world");
 }

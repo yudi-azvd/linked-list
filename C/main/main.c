@@ -1,14 +1,18 @@
 #include <stdio.h>
 #include "calculator.h"
-#include "list.h"
 
 int main() {
-    t_list* list = create_list("int");
 
-    printf("%s\n", "oi, mundo!");
+    char expression[] = "3*8/4.5";
+    char* result;
 
-    clear(list);
-    free(list);
+    calculate(expression, &result);
+
+    printf("%s\n", expression);
+
+    printf(" = %s\n", result);
+
+    free(result);
 
     return 0;
 }

@@ -15,7 +15,7 @@ extern "C" {
 TEST_CASE("stack basic", "[stack]") {
     const int S_SIZE = 5;
     int* data = (int*) calloc(1, sizeof(int));
-    t_stack* s = create_list("int");
+    t_stack* s = create_stack("int");
 
     SECTION("push") {
         int i = 0;
