@@ -47,6 +47,10 @@ file(GLOB TEST_SOURCES_UTIL
 	"tests/util/*.cpp"
 )
 
+file(GLOB TEST_SOURCES_ANALYSIS
+	"tests/analysis/*.cpp"
+)
+
 file(GLOB TEST_SOURCES_CALCULATOR
 	"tests/calculator/*.cpp"
 )
@@ -85,6 +89,13 @@ add_executable(
 	test_util
 	${CORE}
  	${TEST_SOURCES_UTIL}
+	${LIBS}
+)
+
+add_executable(
+	test_analysis
+	${CORE}
+ 	${TEST_SOURCES_ANALYSIS}
 	${LIBS}
 )
 
