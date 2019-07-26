@@ -73,46 +73,46 @@ int copy_to(char dest[], char src[], int start, int end) {
 	return count-1; // adjustment
 }
 
-int is_operator(char c) {
-	if     (c == '+')
-		return 1;
-	else if(c == '-')
-		return 1;
-	else if(c == '*')
-		return 1;
-	else if(c == '/')
-		return 1;
-	return 0;
-}
+// int is_operator(char c) {
+// 	if     (c == '+')
+// 		return 1;
+// 	else if(c == '-')
+// 		return 1;
+// 	else if(c == '*')
+// 		return 1;
+// 	else if(c == '/')
+// 		return 1;
+// 	return 0;
+// }
 
-void removespc(char str[]) {
-	int i;
-	t_char_list* char_list = create_char_list();
-	t_char_node* node;
+// void removespc(char str[]) {
+// 	int i;
+// 	t_char_list* char_list = create_char_list();
+// 	t_char_node* node;
+//
+// 	for(i = 0; i < strlen(str); i++) {
+// 		if(str[i] != ' ' && str[i] != '\n' && str[i] != '\t') {
+// 			add_char_tail(str[i], char_list);
+// 		}
+// 	}
+//
+// 	i = 0;
+// 	node = char_list->head;
+// 	while(node != NULL) {
+// 		str[i] = node->data;
+// 		node = node->next;
+// 		i++;
+// 	}
+// 	str[i] = '\0';
+//
+// 	clear_char_list(char_list);
+// }
 
-	for(i = 0; i < strlen(str); i++) {
-		if(str[i] != ' ' && str[i] != '\n' && str[i] != '\t') {
-			add_char_tail(str[i], char_list);
-		}
-	}
-
-	i = 0;
-	node = char_list->head;
-	while(node != NULL) {
-		str[i] = node->data;
-		node = node->next;
-		i++;
-	}
-	str[i] = '\0';
-
-	clear_char_list(char_list);
-}
-
-int is_number(char c) {
-	if('0' <= c && c <= '9')
-		return 1;
-	return 0;
-}
+// int is_number(char c) {
+// 	if('0' <= c && c <= '9')
+// 		return 1;
+// 	return 0;
+// }
 
 int priority(char c) {
 	if     (c == '*' || c == '/')
@@ -125,82 +125,82 @@ int priority(char c) {
 		return -2;
 }
 
-int match(char c1,  char c2) {
-	if(c1 == '(' && c2 == ')')
-		return 1;
-	if(c1 == '[' && c2 == ']')
-		return 1;
-	if(c1 == '{' && c2 == '}')
-		return 1;
-	return 0;
-}
+// int match(char c1,  char c2) {
+// 	if(c1 == '(' && c2 == ')')
+// 		return 1;
+// 	if(c1 == '[' && c2 == ']')
+// 		return 1;
+// 	if(c1 == '{' && c2 == '}')
+// 		return 1;
+// 	return 0;
+// }
 
-int is_bracket(char c) {
-	if(c == '(' || c == '[' || c == '{') 
-		return -1;
-	if(c == ')' || c == ']' || c == '}') 
-		return 1;
-	return 0;
-}
+// int is_bracket(char c) {
+// 	if(c == '(' || c == '[' || c == '{')
+// 		return -1;
+// 	if(c == ')' || c == ']' || c == '}')
+// 		return 1;
+// 	return 0;
+// }
 
 // reduce redundancy... if possible
-int balanced(char expression[]) {
-	int i;
-	t_char_list* stack = create_char_list();
+// int balanced(char expression[]) {
+// 	int i;
+// 	t_char_list* stack = create_char_list();
+//
+// 	for(i = 0; i < strlen(expression); i++) {
+// 		if(is_bracket(expression[i]) < 0)
+// 			add_char_head(expression[i], stack);
+//
+// 		if(is_bracket(expression[i]) > 0) {
+// 			if(!empty_char_list(stack)) {
+// 				if(match(stack->head->data, expression[i]))
+// 					remove_char_head(stack);
+// 				else {
+// 					clear_char_list(stack);
+// 					return 0;
+// 				}
+// 			}
+// 			else {
+// 				clear_char_list(stack);
+// 				return 0;
+// 			}
+// 		}
+// 	}
+//
+// 	if(empty_char_list(stack))
+// 		return 1;
+// 	clear_char_list(stack);
+// 	return 0;
+// }
 
-	for(i = 0; i < strlen(expression); i++) {
-		if(is_bracket(expression[i]) < 0)
-			add_char_head(expression[i], stack);
 
-		if(is_bracket(expression[i]) > 0) {
-			if(!empty_char_list(stack)) {
-				if(match(stack->head->data, expression[i]))
-					remove_char_head(stack);
-				else {
-					clear_char_list(stack);
-					return 0;
-				}
-			}
-			else {
-				clear_char_list(stack);
-				return 0;
-			}
-		}
-	}
-
-	if(empty_char_list(stack))
-		return 1;
-	clear_char_list(stack);
-	return 0;
-}
-
-
-int find_number_end(char str[], int start) {
-	int end = start, number_of_dots=0;
-
-	while(1) {
-		if (is_number(str[end])) {
-			end++;
-		}
-		else if(str[end] == '.') {
-			if(number_of_dots > 1) {
-				printf("smthng went wrong in validation\n");
-				return -1;
-			}
-			else {
-				end++;
-			}
-		}
-		else if (str[end] == '\0') {
-			break;
-		}
-		else {
-			break;
-		}
-	}
-
-	return end;
-}
+// int find_number_end(char str[], int start) {
+// 	int end = start, number_of_dots=0;
+//
+// 	while(1) {
+// 		if (is_number(str[end])) {
+// 			end++;
+// 		}
+// 		else if(str[end] == '.') {
+// 			if(number_of_dots > 1) {
+// 				printf("smthng went wrong in validation\n");
+// 				return -1;
+// 			}
+// 			else {
+// 				end++;
+// 			}
+// 		}
+// 		else if (str[end] == '\0') {
+// 			break;
+// 		}
+// 		else {
+// 			break;
+// 		}
+// 	}
+//
+// 	return end;
+// }
 
 t_str_list* to_str_list(char expression[]) {
 	int i, end;
