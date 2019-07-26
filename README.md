@@ -8,8 +8,8 @@ as formas infixa e pós-fixa.
 Mais informações sobre esse trabalho podem ser encontradas no arquivo
 `./C/docs/calculadora.pdf`.
 
-Se tudo der certo, serão três calculadoras implementadas em três linguagens
-"diferentes" explorando diferentes abordagens de arquitetura de software.
+Se tudo der certo, serão duas ou três calculadoras implementadas explorando diferentes
+abordagens de arquitetura/organização de software.
 
 
 ## C
