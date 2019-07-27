@@ -63,15 +63,15 @@ void itoa(int n, char str[]) {
 	str[i] = '\0';
 }
 
-int copy_to(char dest[], char src[], int start, int end) {
-	int i = start, count = 0;
-
-	for(; i < end; i++, count++)
-		dest[count] = src[i];
-	dest[count] = '\0';
-
-	return count-1; // adjustment
-}
+// int copy_to(char dest[], char src[], int start, int end) {
+// 	int i = start, count = 0;
+//
+// 	for(; i < end; i++, count++)
+// 		dest[count] = src[i];
+// 	dest[count] = '\0';
+//
+// 	return count-1; // adjustment
+// }
 
 // int is_operator(char c) {
 // 	if     (c == '+')

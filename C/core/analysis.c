@@ -28,6 +28,17 @@ int is_function(char c) {
     return 0;
 }
 
+
+int copy_to(char dest[], char src[], int start, int end) {
+    int i = start, count = 0;
+
+    for(; i < end; i++, count++)
+        dest[count] = src[i];
+    dest[count] = '\0';
+
+    return count-1; // adjustment
+}
+
 /* o índice retornado é sempre o do último dígito
 + 1. */
 int find_number_end(char str[], int start) {
@@ -55,4 +66,43 @@ int find_number_end(char str[], int start) {
 	}
 
 	return end;
+}
+
+
+t_list* expression_to_list(char expression[]) {
+    int i, end, expr_len = strlen(expression);
+    char* element;
+    t_list* list = create_list("char*");
+
+    for(i = 0; i < expr_len; i++) {
+        if(is_bracket(expression[i]) != 0) {
+            element = (char*) calloc(2, sizeof(char));
+            element[0] = expression[i];
+            element[1] = '\0';
+
+            insert_tail(list, element);
+        }
+        else if(is_operator(expression[i])) {
+            element = (char*) calloc(2, sizeof(char));
+            element[0] = expression[i];
+            element[1] = '\0';
+
+            insert_tail(list, element);
+        }
+        else if(is_function(expression[i])) {
+
+        }
+        else if(is_number(expression[i])) {
+            end = find_number_end(expression, i);
+            element = (char*) calloc(end-i+1, sizeof(char));
+            i += copy_to(element, expression, i, end);
+        }
+        else {
+            printf("o que é então?\n");
+        }
+
+        free(element);
+    }
+
+    return list;
 }
