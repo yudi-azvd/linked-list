@@ -60,6 +60,25 @@ void* get_tail(t_list* list) {
         return list->tail->data;
 }
 
+/* get_data_at talvez seja um nome melhor */
+void* get_at_index(t_list* list, int index) {
+    if(!is_empty(list) && index >= 0) {
+        int curr_index = 0;
+        t_node* curr_node = list->head;
+
+        while(curr_index <= index && curr_node != NULL) {
+            curr_node = curr_node->next;
+            curr_index++;
+        }
+
+        print(list);
+        printf("to retornando: %d\n", *((int*)  curr_node->data));
+        return curr_node->data;
+    }
+    return NULL;
+}
+
+
 
 int is_empty(t_list* list) {
     return ( list == NULL
@@ -146,14 +165,14 @@ void soft_clear(t_list* list) {
 
 void print_int_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("int_list: ");
+    printf("head:");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("%d ", *(int*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\n");
+    printf("\b:tail\n");
 }
 
 
