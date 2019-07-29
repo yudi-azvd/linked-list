@@ -90,7 +90,9 @@ int is_empty(t_list* list) {
 
 
 void print(t_list* list) {
+    printf("HEAD:");
     list->print(list);
+    printf("\b:TAIL\n");
 }
 
 
@@ -167,53 +169,45 @@ void soft_clear(t_list* list) {
 
 void print_int_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("HEAD:");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("%d ", *(int*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\b:TAIL\n");
 }
 
 
 void print_char_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("HEAD:");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("'%c' ", *(char*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\b:TAIL\n");
 }
 
 
 void print_double_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("HEAD:");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("%.2lf ", *(double*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\b:TAIL\n");
 }
 
 
 void print_str_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("HEAD:");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("\"%s\" ", (char*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\b:TAIL\n");
 }
 
 

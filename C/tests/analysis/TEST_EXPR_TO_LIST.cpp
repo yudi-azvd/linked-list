@@ -17,7 +17,6 @@ extern "C" {
 
 TEST_CASE("expression_to_list", "[expression_to_list]") {
     t_list* list;
-    std::cout << "vou entrar na section" << '\n';
 
     SECTION("1") {
 
@@ -33,10 +32,8 @@ TEST_CASE("expression_to_list", "[expression_to_list]") {
         // std::cout << "dá uma olhada: " << ((char*) get_at_index(list, 1)) << '\n';
         // REQUIRE(str == "*");
         print(list);
-        std::cout << "saindo da section" << '\n';
     }
 
-    std::cout << "saí da section" << '\n';
     clear(list);
     free(list);
 }
