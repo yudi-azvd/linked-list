@@ -37,12 +37,13 @@ Ou clique no botão verde no diretório raíz desse repositório.
 ```
 $ cd calculator/C/
 $ mkdir build
+$ cd build
 $ cmake ..
 $ make
 ```
 
 É normal demorar um pouco pra compilar porque os testes são realizados utilizando
-o framework [Catch2](https://github.com/catchorg/Catch2).
+o framework [Catch2](https://github.com/catchorg/Catch2). Mas é só na primeira vez.
 
 
 ### Executar
