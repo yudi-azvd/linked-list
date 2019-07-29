@@ -1,4 +1,5 @@
 #include "catch2/catch.hpp"
+#include <iostream>
 #include <string.h>
 
 using namespace std;
@@ -16,13 +17,26 @@ extern "C" {
 
 TEST_CASE("expression_to_list", "[expression_to_list]") {
     t_list* list;
+    std::cout << "vou entrar na section" << '\n';
+
     SECTION("1") {
+
         char expression[] = "3*1.5+4";
 
         t_list* list = expression_to_list(expression);
-        // REQUIRE(get_at(list, 0) == );
+
+        // string str = ((char*) get_at_index(list, 0));
+        // std::cout << "dá uma olhada: " << ((char*) get_at_index(list, 0)) << '\n';
+        // REQUIRE(str == "3");
+        //
+        // str = ((char*) get_at_index(list, 1));
+        // std::cout << "dá uma olhada: " << ((char*) get_at_index(list, 1)) << '\n';
+        // REQUIRE(str == "*");
+        print(list);
+        std::cout << "saindo da section" << '\n';
     }
 
+    std::cout << "saí da section" << '\n';
     clear(list);
     free(list);
 }

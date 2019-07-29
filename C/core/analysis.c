@@ -39,6 +39,7 @@ int copy_to(char dest[], char src[], int start, int end) {
     return count-1; // adjustment
 }
 
+
 /* o índice retornado é sempre o do último dígito
 + 1. */
 int find_number_end(char str[], int start) {
@@ -96,12 +97,11 @@ t_list* expression_to_list(char expression[]) {
             end = find_number_end(expression, i);
             element = (char*) calloc(end-i+1, sizeof(char));
             i += copy_to(element, expression, i, end);
+            insert_tail(list, element);
         }
         else {
             printf("o que é então?\n");
         }
-
-        free(element);
     }
 
     return list;
