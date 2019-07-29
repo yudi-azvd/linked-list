@@ -60,6 +60,27 @@ void* get_tail(t_list* list) {
         return list->tail->data;
 }
 
+/* get_data_at talvez seja um nome melhor */
+void* get_at_index(t_list* list, int index) {
+    if(!is_empty(list) && index >= 0) {
+        int curr_index = 0;
+        t_node* curr_node = list->head;
+
+        while(curr_index < index) {
+            curr_node = curr_node->next;
+            curr_index++;
+
+            if (curr_node == NULL) {
+                return NULL;
+            }
+        }
+        return curr_node->data;
+    }
+    else {
+        return NULL;
+    }
+}
+
 
 int is_empty(t_list* list) {
     return ( list == NULL
@@ -69,7 +90,9 @@ int is_empty(t_list* list) {
 
 
 void print(t_list* list) {
+    printf("HEAD:");
     list->print(list);
+    printf("\b:TAIL\n");
 }
 
 
@@ -146,54 +169,45 @@ void soft_clear(t_list* list) {
 
 void print_int_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("int_list: ");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("%d ", *(int*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\n");
 }
 
 
 void print_char_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("char_list:");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("'%c' ", *(char*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\n");
 }
-
 
 
 void print_double_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("double_list: ");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("%.2lf ", *(double*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\n");
 }
 
 
 void print_str_list(t_list* list) {
     t_node* curr_node = list->head;
-    printf("str_list:");
     if (curr_node != NULL) {
         while (curr_node != NULL) {
             printf("\"%s\" ", (char*) curr_node->data);
             curr_node = curr_node->next;
         }
     }
-    printf("\n");
 }
 
 
