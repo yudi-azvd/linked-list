@@ -91,7 +91,9 @@ t_list* expression_to_list(char expression[]) {
             insert_tail(list, element);
         }
         else if(is_function(expression[i])) {
-
+            /* pra pegar termos como
+            3.0*sin(1.5689)+4^atan2(3, 4)
+                ^^^^^^^^^^^   ^^^^^^^^^^^ */
         }
         else if(is_number(expression[i])) {
             end = find_number_end(expression, i);

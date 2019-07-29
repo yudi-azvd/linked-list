@@ -19,19 +19,48 @@ TEST_CASE("expression_to_list", "[expression_to_list]") {
     t_list* list;
 
     SECTION("1") {
-
         char expression[] = "3*1.5+4";
 
-        t_list* list = expression_to_list(expression);
+        list = expression_to_list(expression);
 
-        // string str = ((char*) get_at_index(list, 0));
-        // std::cout << "dá uma olhada: " << ((char*) get_at_index(list, 0)) << '\n';
-        // REQUIRE(str == "3");
-        //
-        // str = ((char*) get_at_index(list, 1));
-        // std::cout << "dá uma olhada: " << ((char*) get_at_index(list, 1)) << '\n';
-        // REQUIRE(str == "*");
-        print(list);
+        string str = ((char*) get_at_index(list, 0));
+        REQUIRE(str == "3");
+
+        str = ((char*) get_at_index(list, 1));
+        REQUIRE(str == "*");
+
+        str = ((char*) get_at_index(list, 2));
+        REQUIRE(str == "1.5");
+
+        str = ((char*) get_at_index(list, 3));
+        REQUIRE(str == "+");
+
+        str = ((char*) get_at_index(list, 4));
+        REQUIRE(str == "4");
+    }
+
+    SECTION("2") {
+        char expression[] = "3.000*1.5689+4^";
+
+        list = expression_to_list(expression);
+
+        string str = ((char*) get_at_index(list, 0));
+        REQUIRE(str == "3.000");
+
+        str = ((char*) get_at_index(list, 1));
+        REQUIRE(str == "*");
+
+        str = ((char*) get_at_index(list, 2));
+        REQUIRE(str == "1.5689");
+
+        str = ((char*) get_at_index(list, 3));
+        REQUIRE(str == "+");
+
+        str = ((char*) get_at_index(list, 4));
+        REQUIRE(str == "4");
+
+        str = ((char*) get_at_index(list, 5));
+        REQUIRE(str == "^");
     }
 
     clear(list);
