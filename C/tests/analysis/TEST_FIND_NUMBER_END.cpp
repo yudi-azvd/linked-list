@@ -17,6 +17,8 @@ extern "C" {
 
 TEST_CASE("find_number_end 1", "[find_number_end]") {
     string str = "sdfdf1280-+!";
+    // O cast para char* é só por requirimento go g++ por causa do método
+    // c_str(). Em um programa em C normal ele não é necessário.
     REQUIRE(find_number_end(((char*) str.c_str()), 5) == 9);
 
     str = "1+1";
