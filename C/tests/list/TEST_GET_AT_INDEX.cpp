@@ -18,6 +18,7 @@ TEST_CASE("tests on get_at_index", "[get_at_index]") {
     t_list* list;
 
     SECTION("integers") {
+        // preenchendo a lista
         int* data = (int*) calloc(1, sizeof(int));
         list = create_list("int");
 
@@ -33,18 +34,24 @@ TEST_CASE("tests on get_at_index", "[get_at_index]") {
         insert_head(list, data);
 
         print(list);
-        int head = *((int*) list->head->data);
-        std::cout << "head: " << head << '\n';
-        head = *((int*) get_head(list));
-        std::cout << "head: " << head << '\n';
+        // int head = *((int*) list->head->data);
+        // std::cout << "head: " << head << '\n';
+        // head = *((int*) get_head(list));
+        // std::cout << "head: " << head << '\n';
 
         // REQUIRE(*((int*) get_at_index(list, 0)) == 9);
         // REQUIRE(*((int*) get_at_index(list, 1)) == 0);
-        REQUIRE(*((int*) get_at_index(list, 2)) == 2);
+        // REQUIRE(*((int*) get_at_index(list, 2)) == 2);
 
+        int a = *((int*) get_at_index(list, 0));
+        REQUIRE(a == 9);
+
+        a = *((int*) get_at_index(list, 1));
+        REQUIRE(a == 0);
+
+        a = *((int*) get_at_index(list, 2));
+        REQUIRE(a == 1);
     }
-
-    std::cout << "empty: " << is_empty(list)  << '\n';
 
     clear(list);
     free(list);

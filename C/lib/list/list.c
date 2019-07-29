@@ -66,18 +66,20 @@ void* get_at_index(t_list* list, int index) {
         int curr_index = 0;
         t_node* curr_node = list->head;
 
-        while(curr_index <= index && curr_node != NULL) {
+        while(curr_index < index) {
             curr_node = curr_node->next;
             curr_index++;
-        }
 
-        print(list);
-        printf("to retornando: %d\n", *((int*)  curr_node->data));
+            if (curr_node == NULL) {
+                return NULL;
+            }
+        }
         return curr_node->data;
     }
-    return NULL;
+    else {
+        return NULL;
+    }
 }
-
 
 
 int is_empty(t_list* list) {

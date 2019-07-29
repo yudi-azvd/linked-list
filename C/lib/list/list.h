@@ -147,7 +147,7 @@ void* get_tail(t_list* list);
 * @memberof   t_list
 *
 * @brief      Retorna ponteiro para o nó no índice index.
-* @c get_data_at talvez seja um nome melhor 
+* @c get_data_at talvez seja um nome melhor
 *
 * @param      list  Ponteiro <b>não nulo</b> para lista.
 *
