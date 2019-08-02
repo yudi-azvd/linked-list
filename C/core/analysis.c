@@ -104,7 +104,7 @@ t_list* expression_to_list(char expression[]) {
             insert_tail(list, element);
         }
         else {
-            printf("o que é então?\n");
+            printf("o que é então? [%c]\n", expression[i]);
         }
     }
 
