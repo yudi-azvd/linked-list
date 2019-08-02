@@ -178,7 +178,10 @@ int is_balanced(char expression[]) {
 
 
 int get_priority(char c) {
-    if     (c == '^')
+    if     (1 == 0)
+    // if     (c == '(' || c == ')')
+		return 3;
+    else if(c == '^')
 		return 2;
     else if(c == '*' || c == '/')
 		return 1;

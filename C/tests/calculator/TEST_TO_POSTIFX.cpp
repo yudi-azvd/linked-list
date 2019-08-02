@@ -26,6 +26,16 @@ TEST_CASE("to_postfix", "[to_postfix]") {
     t_list* list;
     t_list* postfix;
 
+    SECTION("to_postfix 0") {
+        char expression[] = "";
+
+        list = expression_to_list(expression);
+        postfix = to_postfix(list);
+
+        REQUIRE(postfix == NULL);
+    }
+
+
     SECTION("to_postfix 1") {
         char expression[] = "3*(8+3.5)/1.2";
         // char output[] = "3 8 3.5 + * 1.2 /";
@@ -109,6 +119,56 @@ TEST_CASE("to_postfix", "[to_postfix]") {
         data = (char*) get_at_index(postfix, 7);
         REQUIRE(string(data) == "0.2");
     }
+
+    // SECTION("to_postfix 4") {
+    //     char expression[] = "3^3^(5*4.1)^0.2";
+    //
+    //     list = expression_to_list(expression);
+    //     postfix = to_postfix(list);
+    //     // print(postfix);
+    //
+    //     data = (char*) get_at_index(postfix, 0);
+    //     REQUIRE(string(data) == "3");
+    //
+    //     data = (char*) get_at_index(postfix, 1);
+    //     REQUIRE(string(data) == "3");
+    //
+    //     data = (char*) get_at_index(postfix, 2);
+    //     REQUIRE(string(data) == "5");
+    //
+    //     data = (char*) get_at_index(postfix, 3);
+    //     REQUIRE(string(data) == "4.1");
+    //
+    //     data = (char*) get_at_index(postfix, 4);
+    //     REQUIRE(string(data) == "*");
+    //
+    //     // 3 3 5 4.1 * 0.2 ^ ^ ^
+    // }
+    //
+    // SECTION("to_postfix 5") {
+    //     char expression[] = "3^3^5*4.1^0.2";
+    //
+    //     list = expression_to_list(expression);
+    //     postfix = to_postfix(list);
+    //     print(postfix);
+    //
+    //     data = (char*) get_at_index(postfix, 0);
+    //     REQUIRE(string(data) == "3");
+    //
+    //     data = (char*) get_at_index(postfix, 1);
+    //     REQUIRE(string(data) == "3");
+    //
+    //     data = (char*) get_at_index(postfix, 2);
+    //     REQUIRE(string(data) == "5");
+    //
+    //     data = (char*) get_at_index(postfix, 3);
+    //     REQUIRE(string(data) == "^");
+    //
+    //     data = (char*) get_at_index(postfix, 4);
+    //     REQUIRE(string(data) == "^");
+    //
+    //     // 3 3 5 ^ ^ 4.1 0.2 ^ *
+    // }
 
     clear(list); // liberar os nós e os data's
     free(list);
