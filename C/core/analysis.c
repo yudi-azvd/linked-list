@@ -19,6 +19,7 @@ int is_operator(char c) {
     return 0;
 }
 
+
 /* definido originalmente em calculator.h
 onde essa função deve ficar? */
 int is_bracket(char c);
@@ -99,6 +100,7 @@ t_list* expression_to_list(char expression[]) {
             end = find_number_end(expression, i);
             element = (char*) calloc(end-i+1, sizeof(char));
             i += copy_to(element, expression, i, end);
+
             insert_tail(list, element);
         }
         else {

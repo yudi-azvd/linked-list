@@ -2,24 +2,109 @@
 #include "calculator.h"
 
 void calculate(char expression[], char** result) {
-    const int RESULT_SIZE = 10;
-    int i_dummy_result = 5;
 
     sanitize(expression);
-    /*
-    double d_dummy_result = 5.4;
-    if valid expression
-        extract numbers and operations from expression and
-          pass them to a list
-        evaluate
 
-    else
-        return error
+    if (is_valid(expression)) {
+        t_list* list = expression_to_list(expression);
 
+        evaluate(list, result);
+        clear(list);
+        free(list);
+        /*
         */
+    }
+    else {
+        /* como retornar um erro daqui?
+        é necessário? */
+        return;
+    }
+}
+
+
+void evaluate(t_list* expression, char** result) {
+    int i_dummy_result = 5;
+
+
+
+    t_list* l = to_postfix(expression);
+    /*
+
+    - algoritmo de avaliação -
+
+    */
+
+    soft_clear(l);
+    free(l);
+
     *result = (char*) calloc(RESULT_SIZE, sizeof(char));
     snprintf(*result, RESULT_SIZE, "%d", i_dummy_result);
 }
+
+
+t_list* to_postfix(t_list* expression) {
+
+    if(is_empty(expression))
+        return NULL;
+
+    char* element = NULL;
+    t_node* curr_node;
+    t_list* output = create_list("char*");
+    t_stack* stack = create_stack("char*");
+
+    for(curr_node = expression->head; curr_node!= NULL; curr_node=curr_node->next) {
+        element = (char*) curr_node->data;
+
+        if(is_number(*element)) {
+            insert_tail(output, element);
+        }
+
+        else if(is_operator(*element)) {
+            char* last_operator = (char*) peek(stack);
+
+            while(!is_empty(stack)
+                && get_priority(*last_operator) >= get_priority(*element)) {
+
+                insert_tail(output, soft_pop(stack));
+            }
+            push(stack, element);
+        }
+
+        else if(is_bracket(*element) < 0) {
+            push(stack, element);
+        }
+
+        else if(is_bracket(*element) > 0) {
+            /*
+            do {
+                char* last_element = (char*) soft_pop(stack);
+                insert_tail(output, last_element);
+            } while(is_bracket(*element < 0));
+            */
+
+            while(1) {
+                char* poped = (char*) soft_pop(stack);
+                if (is_bracket(*poped) < 0) {
+                    break;
+                }
+                insert_tail(output, poped);
+            }
+        }
+        else {
+
+        }
+    }
+
+    while(!is_empty(stack))
+        insert_tail(output, soft_pop(stack));
+
+    print(output);
+    soft_clear(stack);
+    free(stack);
+
+    return output;
+}
+
 
 void sanitize(char expression[]) {
     remove_whitespace(expression);
@@ -98,4 +183,16 @@ int is_balanced(char expression[]) {
     soft_clear(brackets_stack);
     free(brackets_stack);
     return 0;
+}
+
+
+int get_priority(char c) {
+    if     (c == '*' || c == '/')
+		return 1;
+	else if(c == '+' || c == '-')
+		return 0;
+	else if(is_number(c))
+		return -1;
+	else
+		return -2;
 }
