@@ -43,7 +43,6 @@ void evaluate(t_list* expression, char** result) {
 
 
 t_list* to_postfix(t_list* expression) {
-
     if(is_empty(expression))
         return NULL;
 
@@ -75,18 +74,11 @@ t_list* to_postfix(t_list* expression) {
         }
 
         else if(is_bracket(*element) > 0) {
-            /*
-            do {
-                char* last_element = (char*) soft_pop(stack);
-                insert_tail(output, last_element);
-            } while(is_bracket(*element < 0));
-            */
-
             while(1) {
                 char* poped = (char*) soft_pop(stack);
-                if (is_bracket(*poped) < 0) {
+
+                if (is_bracket(*poped) < 0)
                     break;
-                }
                 insert_tail(output, poped);
             }
         }
@@ -98,7 +90,6 @@ t_list* to_postfix(t_list* expression) {
     while(!is_empty(stack))
         insert_tail(output, soft_pop(stack));
 
-    print(output);
     soft_clear(stack);
     free(stack);
 

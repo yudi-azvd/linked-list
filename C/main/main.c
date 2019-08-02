@@ -11,6 +11,7 @@ int main() {
     printf("%s\n", expression);
 
     printf(" = %s\n", result);
+    printf("\n EU AINDA NÃO FUNCIONO\n");
 
     free(result);
 
