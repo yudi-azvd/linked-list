@@ -37,7 +37,7 @@ Ou clique no botão verde no diretório raíz desse repositório.
 ```
 $ cd calculator/C/
 $ mkdir build
-$ cd build
+$ cd build/
 $ cmake ..
 $ make
 ```

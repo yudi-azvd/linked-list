@@ -17,4 +17,12 @@ int find_number_end(char str[], int start);
 t_list* expression_to_list(char expression[]);
 
 
+/* precisa mesmo ? */
+int iss_number(char str[]);
+
+int iss_operator(char str[]);
+
+int iss_function(char str[]);
+
+
 #endif
