@@ -3,12 +3,11 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "list.h" /* t_stack */
+#include "list.h"
 #include "analysis.h"
 #include "util.h"
-/*
 #include "operations.h"
-*/
+
 
 #define EXPRESSION_OK      0
 #define EXPRESSION_INVALID 1

@@ -27,7 +27,6 @@ file(GLOB LIBS
 
 	"lib/terminal_functions/*.h"
 	"lib/terminal_functions/*.c"
-
 )
 add_library(libs ${LIBS})
 

@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "calculator.h"
 
 void calculate(char expression[], char** result) {
@@ -22,21 +21,48 @@ void calculate(char expression[], char** result) {
 
 
 void evaluate(t_list* expression, char** result) {
-    int i_dummy_result = 5;
+    char* element;
+    t_node* curr_node;
 
-    t_list* l = to_postfix(expression);
+    t_list* postfix = to_postfix(expression);
+    t_stack* stack = create_stack("char*");
 
-    print(l);
+    print(postfix);
 
-    /*
-    - algoritmo de avaliação -
-    */
+    for(curr_node=postfix->head; curr_node!=NULL; curr_node=curr_node->next) {
+        element = (char*) curr_node->data;
 
-    soft_clear(l);
-    free(l);
+        if(is_number(element[0])) {
+            push(stack, element);
+        }
+        else if(is_operator(element[0])) {
+            char* operand1 = soft_pop(stack);
+            char* operand2 = soft_pop(stack);
+
+            printf("\n\n");
+            printf("op1 %s\n", operand1);
+            printf("op2 %s\n", operand2);
+
+            operate(&operand1, operand2, element);
+
+            printf("result %s\n", operand1);
+            push(stack, operand1);
+        }
+    }
+
+    soft_clear(postfix);
+    free(postfix);
+
+    printf("RESULTADO FINAL: %s\n", (char*) peek(stack));
+    if (stack->length != 1) {
+        printf("%s\n", "ALGUMA COISA DEU ERRADO");
+    }
 
     *result = (char*) calloc(RESULT_MAX_SIZE, sizeof(char));
-    snprintf(*result, RESULT_MAX_SIZE, "%d", i_dummy_result);
+    strcpy(*result, (char*) peek(stack));
+
+    soft_clear(stack);
+    free(stack);
 }
 
 
