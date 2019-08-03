@@ -2,7 +2,6 @@
 #include "calculator.h"
 
 void calculate(char expression[], char** result) {
-
     sanitize(expression);
 
     if (is_valid(expression)) {
@@ -25,20 +24,19 @@ void calculate(char expression[], char** result) {
 void evaluate(t_list* expression, char** result) {
     int i_dummy_result = 5;
 
-
-
     t_list* l = to_postfix(expression);
+
+    print(l);
+
     /*
-
     - algoritmo de avaliação -
-
     */
 
     soft_clear(l);
     free(l);
 
-    *result = (char*) calloc(RESULT_SIZE, sizeof(char));
-    snprintf(*result, RESULT_SIZE, "%d", i_dummy_result);
+    *result = (char*) calloc(RESULT_MAX_SIZE, sizeof(char));
+    snprintf(*result, RESULT_MAX_SIZE, "%d", i_dummy_result);
 }
 
 

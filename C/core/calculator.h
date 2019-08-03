@@ -13,7 +13,7 @@
 #define EXPRESSION_OK      0
 #define EXPRESSION_INVALID 1
 
-#define RESULT_SIZE 10
+#define RESULT_MAX_SIZE 10
 
 
 /* talvez seja melhor retornar um char** */

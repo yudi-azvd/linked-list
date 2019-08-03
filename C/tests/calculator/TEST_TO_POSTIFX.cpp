@@ -41,7 +41,7 @@ TEST_CASE("to_postfix", "[to_postfix]") {
         // char output[] = "3 8 3.5 + * 1.2 /";
 
         // list = expression_to_list(expression);
-        list = expression_to_list((char*) expression.c_str());
+        list = expression_to_list(expression);
         postfix = to_postfix(list);
 
         data = (char*) get_at_index(postfix, 0);
