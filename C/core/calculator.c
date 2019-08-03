@@ -105,6 +105,10 @@ t_list* to_postfix(t_list* expression) {
                     break;
                 insert_tail(output, poped);
             }
+
+            // if (is_bracket(*(char*)peek(stack)) < 0) {
+            //     soft_pop(stack);
+            // }
         }
         else {
 
