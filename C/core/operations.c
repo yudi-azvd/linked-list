@@ -1,10 +1,11 @@
 #include "operations.h"
 
 
-void operate(char** operand1, char* operand2, char* oper4tor) {
+char* operate(char* operand1, char* operand2, char* oper4tor) {
     double op1, op2, result;
+    char* str_result = NULL;
 
-    sscanf(*operand1, "%lf", &op1);
+    sscanf(operand1, "%lf", &op1);
     sscanf(operand2, "%lf", &op2);
 
     if     (*oper4tor == '+') {
@@ -20,14 +21,11 @@ void operate(char** operand1, char* operand2, char* oper4tor) {
         result = op2/op1;
     }
     else {
-
+        // eu sempre deixo um else de precaução
     }
 
-    // *operand1 = realloc(operand1, OPERAND_MAX_SIZE);
-    snprintf(*operand1, OPERAND_MAX_SIZE, "%lf", result);
+    str_result = calloc(OPERAND_MAX_SIZE+1, sizeof(char));
+    snprintf(str_result, OPERAND_MAX_SIZE, "%lf", result);
 
-    // printf("re insi operate: %s\n", *operand1);
-    // printf("re insi operate: %lf\n", result);
-
-    return ;
+    return str_result;
 }

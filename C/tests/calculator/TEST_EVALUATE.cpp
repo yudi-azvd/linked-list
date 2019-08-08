@@ -25,21 +25,16 @@ TEST_CASE("evaluate", "[evaluate]") {
     char* data;
     char* result;
     t_list* list;
-    t_list* postfix;
 
-    char expression[] = "3*(8+3.5)/1.2";
+    char expression[] = "3*(8+4)/2";
 
     list = expression_to_list(expression);
 
     evaluate(list, &result);
-    // printf("%s\n", *result);
-    // REQUIRE(string(*result) == "5");
+    REQUIRE(string(result) == "18.000000");
 
     clear(list); // liberar os nós e os data's
     free(list);
-
-    soft_clear(postfix); // tem que liberar os nós
-    free(postfix);
 
     free(result);
 }

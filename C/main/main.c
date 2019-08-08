@@ -3,7 +3,11 @@
 
 int main() {
 
-    char expression[] = "3-1*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    char expression[] = "3-1*5+9";
     char* result;
 
     calculate(expression, &result);

@@ -4,13 +4,12 @@ void calculate(char expression[], char** result) {
     sanitize(expression);
 
     if (is_valid(expression)) {
+        // tokenize
         t_list* list = expression_to_list(expression);
 
         evaluate(list, result);
         clear(list);
         free(list);
-        /*
-        */
     }
     else {
         /* como retornar um erro daqui?
@@ -27,26 +26,31 @@ void evaluate(t_list* expression, char** result) {
     t_list* postfix = to_postfix(expression);
     t_stack* stack = create_stack("char*");
 
-    print(postfix);
+    // print(postfix);
 
     for(curr_node=postfix->head; curr_node!=NULL; curr_node=curr_node->next) {
         element = (char*) curr_node->data;
 
         if(is_number(element[0])) {
-            push(stack, element);
+            char* copied_element = calloc(strlen(element)+1, sizeof(char));
+            strcpy(copied_element, element);
+            push(stack, copied_element);
+            // push(stack, element);
         }
         else if(is_operator(element[0])) {
+            // char* operand1 = soft_pop(stack);
+            // char* operand2 = soft_pop(stack);
+
             char* operand1 = soft_pop(stack);
             char* operand2 = soft_pop(stack);
+            char* result = NULL;
 
-            printf("\n\n");
-            printf("op1 %s\n", operand1);
-            printf("op2 %s\n", operand2);
+            result = operate(operand1, operand2, element);
+            free(operand1);
+            free(operand2);
 
-            operate(&operand1, operand2, element);
-
-            printf("result %s\n", operand1);
-            push(stack, operand1);
+            // printf("result %s\n", result);
+            push(stack, result);
         }
     }
 
@@ -61,7 +65,7 @@ void evaluate(t_list* expression, char** result) {
     *result = (char*) calloc(RESULT_MAX_SIZE, sizeof(char));
     strcpy(*result, (char*) peek(stack));
 
-    soft_clear(stack);
+    clear(stack);
     free(stack);
 }
 
