@@ -57,7 +57,7 @@ void evaluate(t_list* expression, char** result) {
     soft_clear(postfix);
     free(postfix);
 
-    printf("RESULTADO FINAL: %s\n", (char*) peek(stack));
+    // printf("RESULTADO FINAL: %s\n", (char*) peek(stack));
     if (stack->length != 1) {
         printf("%s\n", "ALGUMA COISA DEU ERRADO");
     }
