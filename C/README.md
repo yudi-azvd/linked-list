@@ -6,14 +6,14 @@ de Estrutura de Dados para o qual era necessário implementar uma calculadora em
 operações básicas utilizando listas lincadas, pilhas e conversão entre as formas infixa
 e pós-fixa.
 
-Mais informações sobre esse trabalho podem ser encontradas no arquivo `./C/docs/calculadora.pdf.`
-
 
 ## O que ela faz?
-Por enquanto, nada. Acabei de terminar a implementação de lista. Tá funcionando. Só rodar os testes.
+Não é um aplicativo. Está mais para uma biblioteca. Mas por enquanto, ela avalia
+algumas expressões simples que podem ser declaradas em `main/main.c`
 
 
 ## Dependendências
+* git
 * gcc
 * g++
 * [CMake](https://cmake.org/)
@@ -35,7 +35,7 @@ Ou clique no botão verde no diretório raíz desse repositório.
 
 ### Depois de ter baixado
 ```
-$ cd calculator/C/
+$ cd calculator/C
 $ mkdir build
 $ cd build/
 $ cmake ..
@@ -48,13 +48,11 @@ o framework [Catch2](https://github.com/catchorg/Catch2). Mas é só na primeira
 
 ### Executar
 ```
-$ ./nome_do_executavel
+$ ./calculator
 ```
 
-
 ## Fazendo
-Implementação de uma "biblioteca" de lista lincada genérica. Está em `lib/list`
-(ainda estou aprendendo como organizar os arquivos).
+Melhorando o algoritmo de avaliação.
 
 
 ## A fazer

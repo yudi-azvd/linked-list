@@ -3,7 +3,11 @@
 
 int main() {
 
-    char expression[] = "3*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    // char expression[] = "3-1*(8+3.5)/1.2";
+    char expression[] = "3-1*5+9";
     char* result;
 
     calculate(expression, &result);
@@ -11,7 +15,6 @@ int main() {
     printf("%s\n", expression);
 
     printf(" = %s\n", result);
-    printf("\n EU AINDA NÃO FUNCIONO\n");
 
     free(result);
 

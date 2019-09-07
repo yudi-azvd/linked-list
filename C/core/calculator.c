@@ -1,18 +1,15 @@
-#include <stdio.h>
 #include "calculator.h"
 
 void calculate(char expression[], char** result) {
-
     sanitize(expression);
 
     if (is_valid(expression)) {
+        // tokenize
         t_list* list = expression_to_list(expression);
 
         evaluate(list, result);
         clear(list);
         free(list);
-        /*
-        */
     }
     else {
         /* como retornar um erro daqui?
@@ -23,22 +20,53 @@ void calculate(char expression[], char** result) {
 
 
 void evaluate(t_list* expression, char** result) {
-    int i_dummy_result = 5;
+    char* element;
+    t_node* curr_node;
 
+    t_list* postfix = to_postfix(expression);
+    t_stack* stack = create_stack("char*");
 
+    // print(postfix);
 
-    t_list* l = to_postfix(expression);
-    /*
+    for(curr_node=postfix->head; curr_node!=NULL; curr_node=curr_node->next) {
+        element = (char*) curr_node->data;
 
-    - algoritmo de avaliação -
+        if(is_number(element[0])) {
+            char* copied_element = calloc(strlen(element)+1, sizeof(char));
+            strcpy(copied_element, element);
+            push(stack, copied_element);
+            // push(stack, element);
+        }
+        else if(is_operator(element[0])) {
+            // char* operand1 = soft_pop(stack);
+            // char* operand2 = soft_pop(stack);
 
-    */
+            char* operand1 = soft_pop(stack);
+            char* operand2 = soft_pop(stack);
+            char* result = NULL;
 
-    soft_clear(l);
-    free(l);
+            result = operate(operand1, operand2, element);
+            free(operand1);
+            free(operand2);
 
-    *result = (char*) calloc(RESULT_SIZE, sizeof(char));
-    snprintf(*result, RESULT_SIZE, "%d", i_dummy_result);
+            // printf("result %s\n", result);
+            push(stack, result);
+        }
+    }
+
+    soft_clear(postfix);
+    free(postfix);
+
+    // printf("RESULTADO FINAL: %s\n", (char*) peek(stack));
+    if (stack->length != 1) {
+        printf("%s\n", "ALGUMA COISA DEU ERRADO");
+    }
+
+    *result = (char*) calloc(RESULT_MAX_SIZE, sizeof(char));
+    strcpy(*result, (char*) peek(stack));
+
+    clear(stack);
+    free(stack);
 }
 
 
@@ -81,6 +109,10 @@ t_list* to_postfix(t_list* expression) {
                     break;
                 insert_tail(output, poped);
             }
+
+            // if (is_bracket(*(char*)peek(stack)) < 0) {
+            //     soft_pop(stack);
+            // }
         }
         else {
 
@@ -178,7 +210,12 @@ int is_balanced(char expression[]) {
 
 
 int get_priority(char c) {
-    if     (c == '*' || c == '/')
+    if     (1 == 0)
+    // if     (c == '(' || c == ')')
+		return 3;
+    else if(c == '^')
+		return 2;
+    else if(c == '*' || c == '/')
 		return 1;
 	else if(c == '+' || c == '-')
 		return 0;
