@@ -5,21 +5,11 @@ o qual era necessário implementar uma calculadora em C. A calculadora executa
 algumas operações básicas utilizando listas lincadas, pilhas e conversão entre
 as formas infixa e pós-fixa.
 
-Mais informações sobre esse trabalho podem ser encontradas no arquivo
-`./C/docs/calculadora.pdf`.
-
-Se tudo der certo, serão duas ou três calculadoras implementadas explorando diferentes
-abordagens de arquitetura/organização de software.
-
 
 ## C
-Implementação de lista lincada.
+A calculadora funciona para expressões simples que são "hardcoded" em `C/main/main.c`.
 
-
-## Java
-Tem nada ainda.
-
-
-## Noobs
-Aqui vão as instruções para aqueles que só querem usar a calculadora ~~que é a mais top do mercado~~
-(num futuro próximo).
+## Em um futuro não tão distante
+~assim eu espero~ Serão implementadas outras calculadoras explorando diferentes 
+linguagens, ambientes e arquiteturas/organização de software. Talvez eu até tente 
+fazer GUIs em algumas dessas tentativas.
