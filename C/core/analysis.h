@@ -14,6 +14,7 @@ int copy_to(char dest[], char src[], int start, int end);
 
 int find_number_end(char str[], int start);
 
+/* mudar para tokenize() */
 t_list* expression_to_list(char expression[]);
 
 #endif

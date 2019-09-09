@@ -9,6 +9,7 @@ as formas infixa e pós-fixa.
 ## C
 A calculadora funciona para expressões simples que são "hardcoded" em `C/main/main.c`.
 
+
 ## Em um futuro não tão distante
 ~assim eu espero~ Serão implementadas outras calculadoras explorando diferentes 
 linguagens, ambientes e arquiteturas/organização de software. Talvez eu até tente 
