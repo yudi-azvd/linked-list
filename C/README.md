@@ -11,9 +11,7 @@ e pós-fixa.
 Não é um aplicativo. Está mais para uma biblioteca. Mas por enquanto, ela avalia
 algumas expressões simples que podem ser declaradas em `main/main.c`
 
-
-## Em funcionamento
-![gif da calculadora]()
+![gif da calculadora](/resources/calculator.gif)
 
 
 ## Dependendências
