@@ -8,9 +8,7 @@ e pós-fixa.
 
 
 ## O que ela faz?
-Não é um aplicativo. Está mais para uma biblioteca. Mas por enquanto, ela avalia
-algumas expressões simples que podem ser declaradas em `main/main.c`
-
+Aceita algumas expressões simples entradas pelo usuário e apresenta o resultado no terminal.
 ![gif da calculadora](/C/resources/calculator.gif)
 
 
