@@ -23,8 +23,6 @@ algumas expressões simples que podem ser declaradas em `main/main.c`
 
 
 ## Como usar
-(na verdade, só baixar mesmo. Não funciona nada ainda)
-
 
 ### Baixe o repositório
 Abra o terminal e digite:
