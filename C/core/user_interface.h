@@ -3,4 +3,6 @@
 
 int interface();
 
+
+/* random change */
 #endif
