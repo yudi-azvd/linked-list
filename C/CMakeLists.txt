@@ -50,6 +50,10 @@ file(GLOB TEST_SOURCES_ANALYSIS
 	"tests/analysis/*.cpp"
 )
 
+file(GLOB TEST_SOURCES_USER_INTERFACE
+	"tests/user_interface/*.cpp"
+)
+
 file(GLOB TEST_SOURCES_CALCULATOR
 	"tests/calculator/*.cpp"
 )
@@ -95,6 +99,13 @@ add_executable(
 	test_analysis
 	${CORE}
  	${TEST_SOURCES_ANALYSIS}
+	${LIBS}
+)
+
+add_executable(
+	test_user_interface
+	${CORE}
+ 	${TEST_SOURCES_USER_INTERFACE}
 	${LIBS}
 )
 
