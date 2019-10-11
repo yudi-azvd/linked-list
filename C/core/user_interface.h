@@ -1,9 +1,13 @@
 #ifndef USER_INTERFACE_H_INCLUDED
 #define USER_INTERFACE_H_INCLUDED
 
-int interface();
+void get_expression();
 
+int is_quit(char* input);
 
-/* random change */
-/* another random change */
+/*
+void prompt_user();
+
+void getusrinput(char *str, int size);
+*/
 #endif

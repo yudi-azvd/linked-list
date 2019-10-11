@@ -12,7 +12,3 @@ extern "C" {
 }
 #endif
 
-TEST_CASE("simple test") {
-    int result = interface();
-    REQUIRE(result == 1);
-}

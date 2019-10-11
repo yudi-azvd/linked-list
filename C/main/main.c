@@ -1,17 +1,9 @@
 #include <stdio.h>
-#
+
 #include "calculator.h"
-#include "terminal_functions.h"
+#include "user_interface.h"
 
 #define EXPRESSION_MAX_SIZE 50
-
-int quit_command(char* input) {
-    int i;
-    for (i = 0; input[i] != '\0'; i++)
-        if (input[i] == 'q')
-            return 1;
-    return 0;
-}
 
 
 int main() {
@@ -23,15 +15,16 @@ int main() {
     while (1) {
         printf("> ");
         // tem que virar comando no final
-        getusrinput(expression, 0);
+        // getusrinput(expression, 0);
+        get_expression(expression);
 
-        if(quit_command(expression))
+        if(is_quit(expression))
             return 0;
 
         calculate(expression, &result);
 
-        printf("%s\n", expression);
-        printf(" = %s\n", result);
+        printf("%s\n", result);
+
 
         free(result);
     }
