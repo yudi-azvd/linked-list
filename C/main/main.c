@@ -23,9 +23,7 @@ int main() {
             return 0;
 
         calculate(expression, &result);
-
         display(result);
-
         free(result);
     }
 
