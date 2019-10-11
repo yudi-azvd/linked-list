@@ -5,6 +5,9 @@ void get_expression();
 
 int is_quit(char* input);
 
+void display(char* to_display);
+
+
 /*
 void prompt_user();
 
