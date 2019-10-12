@@ -55,5 +55,12 @@ Melhorando o algoritmo de avaliação.
 
 
 ## A fazer
-Ainda tem muita coisa pra fazer. Nem sei listar. Tenho que organizar um
-quadro Scrum/Kanbam.
+1. Continuar o testador da `main.c`. Duas formas:
+* dois programas rodando em paralelo: `$ ./test_main | ./calculator`
+* `input1.txt` com as entradas de comandos e expressões: `./test_main`, que, por sua vez executaria os seguintes comandos no `TEST_CASES`:
+  * `system("./test_main < input1.txt");`
+  * `system("./test_main < input2.txt");`
+Mas então como conferir o resultado?
+
+2. Descobrir um jeito melhor de encapsular (e deixar mais legível) as funções de receber input e diferenciar os comandos
+

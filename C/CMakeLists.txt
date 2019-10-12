@@ -75,6 +75,10 @@ set(CMAKE_C_FLAGS "-Wall -ansi -std=c99")
 add_executable(calculator ${CORE} main/main.c)
 target_link_libraries(calculator ${LIBS})
 
+add_executable(
+	test_main ${LIBS} main/test_main.c
+)
+
 
 add_executable(
 	test_terminal_functions
@@ -115,6 +119,7 @@ add_executable(
  	${TEST_SOURCES_CALCULATOR}
 	${LIBS}
 )
+
 
 # Compilar os testes aletórios
 # foreach(src_file ${TEST_SOURCES_RANDOM_TESTS})

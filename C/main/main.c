@@ -15,8 +15,6 @@ int main() {
 
     while (MAIN_LOOP) {
         printf("> ");
-        // tem que virar comando no final
-        // getusrinput(expression, 0);
         get_expression(expression);
 
         if(is_quit(expression))
